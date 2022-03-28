@@ -1,0 +1,425 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="逆向上分之路" href="https://ctttttttt.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="逆向上分之路" href="https://ctttttttt.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="逆向上分之路" href="https://ctttttttt.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="CTF" />
+
+
+<link rel="canonical" href="https://ctttttttt.github.io/2022/03/28/123-1/">
+
+
+
+  <title>
+easyre题解 - Re - CTF |
+Yume Shoka = 逆向上分之路 = 小熊的Blog</title>
+<meta name="generator" content="Hexo 5.4.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">easyre题解
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-03-28 20:55:36">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-03-28T20:55:36+08:00">2022-03-28</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclgi503lj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclx29mstj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicliierfjj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeubcbajj20zk0m8h1h.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/" itemprop="item" rel="index" title="分类于 CTF"><span itemprop="name">CTF</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/Re/" itemprop="item" rel="index" title="分类于 Re"><span itemprop="name">Re</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://ctttttttt.github.io/2022/03/28/123-1/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/head.jpg">
+    <meta itemprop="name" content="Tuyt">
+    <meta itemprop="description" content="小熊的Blog, CTF🐕都不打！！！">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="逆向上分之路">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h4 id="1easyasm"><a class="markdownIt-Anchor" href="#1easyasm">#</a> (1):easyasm</h4>
+<p>​		题目： <span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMU1BLU9lQnBRMkROZTF0aDlBZmJXUVE=">https://pan.baidu.com/s/1MA-OeBpQ2DNe1th9AfbWQQ</span></p>
+<p>​		提取码：tuyt</p>
+<p>题解：</p>
+<p>1. 首先用 exe 去看有没有壳，发现没壳用 IDA 打开，发现不可以 F5 看反编译，于是就开始看汇编代码，它在干嘛</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">seg001:0000 seg001          segment byte public &#x27;UNK&#x27; use16</span><br><span class="line">seg001:0000                 assume cs:seg001</span><br><span class="line">seg001:0000                 assume es:nothing, ss:nothing, ds:dseg, fs:nothing, gs:nothing</span><br><span class="line">seg001:0000                 db  91h</span><br><span class="line">seg001:0001                 db  61h ; a</span><br><span class="line">seg001:0002                 db    1</span><br><span class="line">seg001:0003                 db 0C1h</span><br><span class="line">seg001:0004                 db  41h ; A</span><br><span class="line">seg001:0005                 db 0A0h</span><br><span class="line">seg001:0006                 db  60h ; `</span><br><span class="line">seg001:0007                 db  41h ; A</span><br><span class="line">seg001:0008                 db 0D1h</span><br><span class="line">seg001:0009                 db  21h ; !</span><br><span class="line">seg001:000A                 db  14h</span><br><span class="line">seg001:000B                 db 0C1h</span><br><span class="line">seg001:000C                 db  41h ; A</span><br><span class="line">seg001:000D                 db 0E2h</span><br><span class="line">seg001:000E                 db  50h ; P</span><br><span class="line">seg001:000F                 db 0E1h</span><br><span class="line">seg001:0010                 db 0E2h</span><br><span class="line">seg001:0011                 db  54h ; T</span><br><span class="line">seg001:0012                 db  20h</span><br><span class="line">seg001:0013                 db 0C1h</span><br><span class="line">seg001:0014                 db 0E2h</span><br><span class="line">seg001:0015                 db  60h ; `</span><br><span class="line">seg001:0016                 db  14h</span><br><span class="line">seg001:0017                 db  30h ; 0</span><br><span class="line">seg001:0018                 db 0D1h</span><br><span class="line">seg001:0019                 db  51h ; Q</span><br><span class="line">seg001:001A                 db 0C0h</span><br><span class="line">seg001:001B                 db  17h</span><br><span class="line">seg001:001C                 db    0</span><br><span class="line">seg001:001D                 db    0</span><br><span class="line">seg001:001E                 db    0</span><br><span class="line">seg001:001F                 db    0</span><br><span class="line">seg001:001F seg001          ends</span><br><span class="line">seg001:001F</span><br><span class="line">seg002:0000 ; ===========================================================================</span><br><span class="line">seg002:0000</span><br><span class="line">seg002:0000 ; Segment type: Uninitialized</span><br><span class="line">seg002:0000 seg002          segment byte stack &#x27;STACK&#x27; use16</span><br><span class="line">seg002:0000                 assume cs:seg002</span><br><span class="line">seg002:0000                 assume es:nothing, ss:nothing, ds:dseg, fs:nothing, gs:nothing</span><br><span class="line">seg002:0000                 db 80h dup(0)</span><br><span class="line">seg002:0000 seg002          ends</span><br><span class="line">seg002:0000</span><br><span class="line">seg003:0000 ; ===========================================================================</span><br><span class="line">seg003:0000</span><br><span class="line">seg003:0000 ; Segment type: Pure code</span><br><span class="line">seg003:0000 seg003          segment byte public &#x27;CODE&#x27; use16</span><br><span class="line">seg003:0000                 assume cs:seg003</span><br><span class="line">seg003:0000                 assume es:nothing, ss:seg002, ds:nothing, fs:nothing, gs:nothing</span><br><span class="line">seg003:0000</span><br><span class="line">seg003:0000 ; =============== S U B R O U T I N E =======================================</span><br><span class="line">seg003:0000</span><br><span class="line">seg003:0000 ; Attributes: noreturn</span><br><span class="line">seg003:0000</span><br><span class="line">seg003:0000                 public start            //开始程序</span><br><span class="line">seg003:0000 start           proc near</span><br><span class="line">seg003:0000                 mov     ax, seg dseg    </span><br><span class="line">seg003:0003                 mov     ds, ax</span><br><span class="line">seg003:0005                 assume ds:dseg</span><br><span class="line">seg003:0005                 mov     ax, seg seg001</span><br><span class="line">seg003:0008                 mov     es, ax          //ax的值传入es</span><br><span class="line">seg003:000A                 assume es:seg001   		//引用seg001的东西给es</span><br><span class="line">seg003:000A                 mov     si, 0</span><br><span class="line">seg003:000D</span><br><span class="line">seg003:000D loc_100DD:                              ; CODE XREF: start+38↓j</span><br><span class="line">seg003:000D                 cmp     si, 1Ch                </span><br><span class="line">seg003:0010                 jz      short loc_10135     </span><br><span class="line">seg003:0012                 xor     ax, ax          //将ax寄存器清0</span><br><span class="line">seg003:0014                 mov     al, [si]        //al为低4位</span><br><span class="line">seg003:0016                 shl     al, 1</span><br><span class="line">seg003:0018                 shl     al, 1</span><br><span class="line">seg003:001A                 shl     al, 1</span><br><span class="line">seg003:001C                 shl     al, 1           //shl为左移指令 ，这里左移4次</span><br><span class="line">seg003:001E                 push    ax</span><br><span class="line">seg003:001F                 xor     ax, ax</span><br><span class="line">seg003:0021                 mov     al, [si]</span><br><span class="line">seg003:0023                 shr     al, 1</span><br><span class="line">seg003:0025                 shr     al, 1</span><br><span class="line">seg003:0027                 shr     al, 1</span><br><span class="line">seg003:0029                 shr     al, 1           //shr为右移指令 ， 这里右移4次</span><br><span class="line">seg003:002B                 pop     bx</span><br><span class="line">seg003:002C                 add     ax, bx</span><br><span class="line">seg003:002E                 xor     ax, 17h         //将ax与17h进行异或处理</span><br><span class="line">seg003:0031                 add     si, 1</span><br><span class="line">seg003:0034                 cmp     al, es:[si-1]</span><br><span class="line">seg003:0038                 jz      short loc_100DD</span><br><span class="line">seg003:003A                 mov     ax, 0B800h</span><br><span class="line">seg003:003D                 mov     es, ax</span><br><span class="line">seg003:003F                 assume es:nothing</span><br><span class="line">seg003:003F                 mov     byte ptr es:0, 77h ; &#x27;w&#x27;</span><br><span class="line">seg003:0045                 mov     byte ptr es:2, 72h ; &#x27;r&#x27;</span><br><span class="line">seg003:004B                 mov     byte ptr es:4, 6Fh ; &#x27;o&#x27;</span><br><span class="line">seg003:0051                 mov     byte ptr es:6, 6Eh ; &#x27;n&#x27;</span><br><span class="line">seg003:0057                 mov     byte ptr es:8, 67h ; &#x27;g&#x27;</span><br><span class="line">seg003:005D                 mov     byte ptr es:0Ah, 21h ; &#x27;!&#x27;</span><br><span class="line">seg003:0063</span><br><span class="line">seg003:0063 loc_10133:                              ; CODE XREF: start:loc_10133↓j</span><br><span class="line">seg003:0063                 jmp     short loc_10133</span><br><span class="line">seg003:0065 ; ---------------------------------------------------------------------------</span><br><span class="line">seg003:0065</span><br><span class="line">seg003:0065 loc_10135:                              ; CODE XREF: start+10↑j</span><br><span class="line">seg003:0065                 mov     ax, 0B800h</span><br><span class="line">seg003:0068                 mov     es, ax</span><br><span class="line">seg003:006A                 mov     byte ptr es:0, 72h ; &#x27;r&#x27;</span><br><span class="line">seg003:0070                 mov     byte ptr es:2, 69h ; &#x27;i&#x27;</span><br><span class="line">seg003:0076                 mov     byte ptr es:4, 67h ; &#x27;g&#x27;</span><br><span class="line">seg003:007C                 mov     byte ptr es:6, 68h ; &#x27;h&#x27;</span><br><span class="line">seg003:0082                 mov     byte ptr es:8, 74h ; &#x27;t&#x27;</span><br><span class="line">seg003:0088                 mov     byte ptr es:0Ah, 21h ; &#x27;!&#x27;</span><br><span class="line">seg003:008E</span><br><span class="line">seg003:008E loc_1015E:                              ; CODE XREF: start:loc_1015E↓j</span><br><span class="line">seg003:008E                 jmp     short loc_1015E</span><br><span class="line">seg003:008E start           endp</span><br><span class="line">seg003:008E</span><br><span class="line">seg003:008E seg003          ends</span><br><span class="line">seg003:008E</span><br><span class="line">seg003:008E</span><br><span class="line">seg003:008E                 end start</span><br></pre></td></tr></table></figure>
+<p>​		它的逻辑是将输入的字符左移四位再右移四位再相加，然后再将每一位与 0x17 异或运算，如果每一位结果都等于 seg001 中的值对应相等就输出 right，那么我们就逆着来写个脚本</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a[<span class="number">28</span>] = &#123;<span class="number">0x91</span>,<span class="number">0x61</span>,<span class="number">0x1</span>,<span class="number">0xc1</span>,<span class="number">0x41</span>,<span class="number">0xa0</span>,<span class="number">0x60</span>,<span class="number">0x41</span>,<span class="number">0xd1</span>,<span class="number">0x21</span>,<span class="number">0x14</span>,<span class="number">0xc1</span>,<span class="number">0x41</span>,<span class="number">0xe2</span>,<span class="number">0x50</span>,<span class="number">0xe1</span>,<span class="number">0xe2</span>,<span class="number">0x54</span>,<span class="number">0x20</span>,<span class="number">0xc1</span>,<span class="number">0xe2</span>,<span class="number">0x60</span>,<span class="number">0x14</span>,<span class="number">0x30</span>,<span class="number">0xd1</span>,<span class="number">0x51</span>,<span class="number">0xc0</span>,<span class="number">0x17</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">28</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i] = a[i] ^ <span class="number">23</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">28</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i] = (a[i]&gt;&gt;<span class="number">4</span>)+ (a[i]&lt;&lt;<span class="number">4</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a[i]);</span><br><span class="line">			</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里要注意一个细节，就是在程序中，我们的值是先进行左移再进行右移的，所以我们在写脚本的时候要注意，要先右移再左移，这样的结果才是对的.</p>
+<p>最后得到 flag：<strong>hgame{welc0me_to_4sm_w0rld}</strong></p>
+
+      <div class="tags">
+          <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-03-28 20:57:40" itemprop="dateModified" datetime="2022-03-28T20:57:40+08:00">2022-03-28</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Tuyt <i class="ic i-at"><em>@</em></i>逆向上分之路
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://ctttttttt.github.io/2022/03/28/123-1/" title="easyre题解">https://ctttttttt.github.io/2022/03/28/123-1/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1easyasm"><span class="toc-number">1.</span> <span class="toc-text"> (1):easyasm</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2022/03/28/123-1/" rel="bookmark" title="easyre题解">easyre题解</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Tuyt"
+      data-src="/images/head.jpg">
+  <p class="name" itemprop="name">Tuyt</p>
+  <div class="description" itemprop="description">CTF🐕都不打！！！</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">1</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">2</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">1</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>目录</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友人帐</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>链接</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/03/28/123-1/" title="easyre题解">easyre题解</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Tuyt @ Yume Shoka</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/03/28/123-1/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
