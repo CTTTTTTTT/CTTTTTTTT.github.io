@@ -1,0 +1,471 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="逆向上分之路" href="https://ctttttttt.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="逆向上分之路" href="https://ctttttttt.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="逆向上分之路" href="https://ctttttttt.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="CTF" />
+
+
+<link rel="canonical" href="https://ctttttttt.github.io/2022/03/28/1/">
+
+
+
+  <title>
+2022DASCTF X SU 三月春季挑战赛   easyre题解 - Re - CTF |
+(o゜▽゜)o☆[BINGO!] = 逆向上分之路 = Tuyt的Blog</title>
+<meta name="generator" content="Hexo 5.4.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">2022DASCTF X SU 三月春季挑战赛   easyre题解
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-03-28 20:55:36">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-03-28T20:55:36+08:00">2022-03-28</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">(o゜▽゜)o☆[BINGO!]</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexoj0moj20zk0m8kgu.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipesng5oej20zk0m87d4.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/" itemprop="item" rel="index" title="分类于 CTF"><span itemprop="name">CTF</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/Re/" itemprop="item" rel="index" title="分类于 Re"><span itemprop="name">Re</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://ctttttttt.github.io/2022/03/28/1/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/head.jpg">
+    <meta itemprop="name" content="Tuyt">
+    <meta itemprop="description" content="Tuyt的Blog, CTF🐕都不打！！！">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="逆向上分之路">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h4 id="2022DASCTF-X-SU-三月春季挑战赛-easyre"><a href="#2022DASCTF-X-SU-三月春季挑战赛-easyre" class="headerlink" title="2022DASCTF X SU 三月春季挑战赛   easyre"></a>2022DASCTF X SU 三月春季挑战赛   easyre</h4><p>首先拿到文件，用exe去看看有没有加壳</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220401211248926.png" alt="image-20220401211248926"></p>
+<p>发现这是asp的壳，我们就用</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/%E6%9C%AA%E5%91%BD%E5%90%8D%E5%9B%BE%E7%89%87.png" alt="未命名图片"></p>
+<p>把它去壳，去壳之后放入IDA进行分析</p>
+<p>首先shift+12去看有没有什么线索</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220401211510960.png" alt="image-20220401211510960"></p>
+<p>发现这里有个right于是我们双击进去看看，然后Ctrl+x去看看它调用了些什么函数</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220401211614169.png" alt="image-20220401211614169"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220401211728152.png" alt="image-20220401211728152">我们一个个分析，sub_401500()这个函数里头</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220401211834242.png" alt="image-20220401211834242"></p>
+<p>表示的是定义了b这个数组有256个元素</p>
+<p>sub_40152B()这个函数</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220401211943375.png" alt="image-20220401211943375"></p>
+<p>这里的sub_41A038(v1)这个函数可以知道就是v3，从最后的for循环很容易得到v3=42</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220401212023001.png" alt="image-20220401212023001"></p>
+<p>所以result=42；</p>
+<p>这里可以猜测v1是密匙，因为他是用的strcpy函数，我们就写一个脚本，看一下它这个ASCII码会转换成什么</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220401212122903.png" alt="image-20220401212122903"></p>
+<p>可以发现密匙为[49,50,51,52,53,54]</p>
+<p>然后这里最后的*(dword_492440 + i) = result，*(dword_492440 + i)先放着，继续往下看</p>
+<p>sub_401593()函数</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220401212715832.png" alt="image-20220401212715832"></p>
+<p>这里的交换，与256的循环以及前面的b[256]可以判断出来这是一个RC4的加密</p>
+<p>sub_401619(a1, v3)函数</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220401213146901.png" alt="image-20220401213146901"></p>
+<p>这是一个加密的算法，画圈部分将它简化放入for循环中当条件为a–，这里dword_492940数组就是外面的for循环中的数组，于是我们去外面看看</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220401213255132.png" alt="image-20220401213255132"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220401213343871.png" alt="image-20220401213343871">这里的LOBYTE(dword_492940[i]表示的是这个数组的低八位</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220401213429642.png" alt="image-20220401213429642"></p>
+<p>然后这个*(dword_492A60 + i)就是v2数组</p>
+<p>*(i + a1)这个表示的是a1[i]也是我们要求的，那么这个语句的逆向结果为</p>
+<p>a[i]=(v2[i]-71)^(dword_492940[i] &amp; 0xff);</p>
+<p>那我们开始写脚本</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdint.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> s[<span class="number">256</span>];</span><br><span class="line"></span><br><span class="line"><span class="type">char</span> t[<span class="number">256</span>];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> k[<span class="number">50</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span>* b)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="type">uint8_t</span> tmp;</span><br><span class="line"></span><br><span class="line">tmp = *a;</span><br><span class="line"></span><br><span class="line">*a = *b;</span><br><span class="line"></span><br><span class="line">*b = tmp;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Rc4_Init</span><span class="params">(<span class="type">uint8_t</span>* key, <span class="type">uint32_t</span> klen)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> i, j;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">256</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">s[i] = i;</span><br><span class="line"></span><br><span class="line">t[i] = key[i % klen];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">j = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">256</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">j = (j + s[i] + t[i]) % <span class="number">256</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">swap</span>(&amp;s[i], &amp;s[j]);</span><br><span class="line"></span><br><span class="line">&#125;                             <span class="comment">//交换的函数(可以套用这个模板)</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> __cdecl <span class="title">sub_401619</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> v3; <span class="comment">// [esp+10h] [ebp-10h]</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> v4; <span class="comment">// [esp+14h] [ebp-Ch]</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> v5; <span class="comment">// [esp+18h] [ebp-8h]</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> i; <span class="comment">// [esp+1Ch] [ebp-4h]</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> a2 = <span class="number">42</span>;</span><br><span class="line"></span><br><span class="line">v4 = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">v5 = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; a2--; k[v4++] = s[(s[v5] + s[i]) % <span class="number">256</span>])</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">i = (i + <span class="number">1</span>) % <span class="number">256</span>;</span><br><span class="line"></span><br><span class="line">v5 = (v5 + s[i]) % <span class="number">256</span>;</span><br><span class="line"></span><br><span class="line">v3 = s[i] + <span class="number">66</span>;</span><br><span class="line"></span><br><span class="line">s[i] = s[v5] - <span class="number">33</span>;</span><br><span class="line"></span><br><span class="line">s[i] ^= <span class="number">2u</span>;</span><br><span class="line"></span><br><span class="line">s[v5] = <span class="number">5</span> * v3;</span><br><span class="line"></span><br><span class="line">s[v5] = s[i] - <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">s[v5] += s[i];</span><br><span class="line"></span><br><span class="line">s[i] -= <span class="number">18</span>;</span><br><span class="line"></span><br><span class="line">&#125;                              <span class="comment">//加密部分的函数</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="type">uint8_t</span> v2[<span class="number">42</span>];</span><br><span class="line"></span><br><span class="line"><span class="type">uint8_t</span> ket[<span class="number">7</span>] = &#123;<span class="number">49</span>,<span class="number">50</span>,<span class="number">51</span>,<span class="number">52</span>,<span class="number">53</span>,<span class="number">54</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Rc4_Init</span>(ket, <span class="number">6</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">sub_401619</span>();</span><br><span class="line"></span><br><span class="line">v2[<span class="number">0</span>] = <span class="number">-61</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">1</span>] = <span class="number">-128</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">2</span>] = <span class="number">-43</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">3</span>] = <span class="number">-14</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">4</span>] = <span class="number">-101</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">5</span>] = <span class="number">48</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">6</span>] = <span class="number">11</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">7</span>] = <span class="number">-76</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">8</span>] = <span class="number">85</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">9</span>] = <span class="number">-34</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">10</span>] = <span class="number">34</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">11</span>] = <span class="number">-125</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">12</span>] = <span class="number">47</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">13</span>] = <span class="number">-105</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">14</span>] = <span class="number">-72</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">15</span>] = <span class="number">32</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">16</span>] = <span class="number">29</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">17</span>] = <span class="number">116</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">18</span>] = <span class="number">-47</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">19</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">20</span>] = <span class="number">115</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">21</span>] = <span class="number">26</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">22</span>] = <span class="number">-78</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">23</span>] = <span class="number">-56</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">24</span>] = <span class="number">-59</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">25</span>] = <span class="number">116</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">26</span>] = <span class="number">-64</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">27</span>] = <span class="number">91</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">28</span>] = <span class="number">-9</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">29</span>] = <span class="number">15</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">30</span>] = <span class="number">-45</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">31</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">32</span>] = <span class="number">85</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">33</span>] = <span class="number">-78</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">34</span>] = <span class="number">-92</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">35</span>] = <span class="number">-82</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">36</span>] = <span class="number">123</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">37</span>] = <span class="number">-84</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">38</span>] = <span class="number">92</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">39</span>] = <span class="number">86</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">40</span>] = <span class="number">-68</span>;</span><br><span class="line"></span><br><span class="line">v2[<span class="number">41</span>] = <span class="number">35</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">42</span>; i++)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">v2[i] = ((v2[i] - <span class="number">71</span>) ^ (k[i] &amp; <span class="number">0xff</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//return 0;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,v2);     </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">得到flag：</span><br><span class="line"></span><br><span class="line">DASCTF&#123;Welc0me-t0-j01n-SU-l0ve-suyug1eg1e&#125;</span><br></pre></td></tr></table></figure>
+
+
+      <div class="tags">
+          <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-04-01 21:41:49" itemprop="dateModified" datetime="2022-04-01T21:41:49+08:00">2022-04-01</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Tuyt <i class="ic i-at"><em>@</em></i>逆向上分之路
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://ctttttttt.github.io/2022/03/28/1/" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">https://ctttttttt.github.io/2022/03/28/1/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/03/28/123-1/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitf0kl1j20zk0m87fe.jpg" title="easyre题解">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Re</span>
+  <h3>easyre题解</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#2022DASCTF-X-SU-%E4%B8%89%E6%9C%88%E6%98%A5%E5%AD%A3%E6%8C%91%E6%88%98%E8%B5%9B-easyre"><span class="toc-number">1.</span> <span class="toc-text">2022DASCTF X SU 三月春季挑战赛   easyre</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2022/03/28/123-1/" rel="bookmark" title="easyre题解">easyre题解</a></li><li class="active"><a href="/2022/03/28/1/" rel="bookmark" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Tuyt"
+      data-src="/images/head.jpg">
+  <p class="name" itemprop="name">Tuyt</p>
+  <div class="description" itemprop="description">CTF🐕都不打！！！</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">2</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">2</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">1</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE3NDExOTMyODg=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1741193288"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>目录</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友人帐</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>链接</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/03/28/1/" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/03/28/123-1/" title="easyre题解">easyre题解</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Tuyt @ (o゜▽゜)o☆[BINGO!]</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/03/28/1/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
