@@ -24,13 +24,15 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
+  <meta name="keywords" content="CTF" />
+
 
 <link rel="canonical" href="https://ctttttttt.github.io/2022/04/05/3/">
 
 
 
   <title>
-3 |
+TEA - 加密算法 - CTF |
 (o゜▽゜)o☆[BINGO!] = 逆向上分之路 = Tuyt的Blog</title>
 <meta name="generator" content="Hexo 5.4.1"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -58,7 +60,7 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">3
+  <h1 itemprop="name headline">TEA
   </h1>
   
 <div class="meta">
@@ -100,12 +102,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipetfk5zwj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="http://xinzhuobu.com/wp-content/uploads/2022/03/20220317007.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipesx5fdwj20zk0m81kx.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeubcbajj20zk0m8h1h.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeyonbf9j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipesrnqv3j20zk0m8ava.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="https://images6.alphacoders.com/118/thumb-1920-1186122.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipev1x5e4j20zk0m8b29.jpg"></li>
         </ul>
       </div>
     </header>
@@ -130,7 +132,12 @@
     
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
-<span><a href="/">首页</a></span>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/" itemprop="item" rel="index" title="分类于 CTF"><span itemprop="name">CTF</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" itemprop="item" rel="index" title="分类于 加密算法"><span itemprop="name">加密算法</span></a>
+<meta itemprop="position" content="2" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
@@ -149,12 +156,34 @@
   <div class="body md" itemprop="articleBody">
     
 
-    
+    <h4 id="tea加密"><a class="markdownIt-Anchor" href="#tea加密">#</a> TEA 加密</h4>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220405164026618.png" alt="image-20220405164026618"></p>
+<p>在 IDA 中识别 TEA 加密：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220405164158696.png" alt="image-20220405164158696"></p>
+<p>其中可以发现 TEA 的显著特征 0xC6EF3720，和 -0x61C88647 (即 0x9E3779B9) 还有十六个字节的 key</p>
+<p>看到这种新式差不多都是 TEA 加密，上图是一个魔改 TEA，更换的 delta 的值，并且多异或了一个 sum</p>
+<p>首先这个 v3 +=xxxx 这个就代表了 v3 是 sum</p>
+<p>然后这个 v5 和 v6 就是 y 和 z</p>
+<p>这个 (v3+v6) 和 (v3+v5) 是 (z 或 y+sum) 的意思</p>
+<p>同理这个 (v10 [3 或 1]+(v5 或 6 &gt;&gt; 5) 是 ((z 或 y&gt;&gt;5)+k [1 或 3]) 的意思</p>
+<p>然后这个 (16*xxx) 这个表示的是左移</p>
+<p><a href="https://ctttttttt.github.io/2022/04/05/4/">tea 加密的例题</a></p>
+
+      <div class="tags">
+          <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
+      </div>
   </div>
 
    <footer>
 
     <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-04-05 17:21:10" itemprop="dateModified" datetime="2022-04-05T17:21:10+08:00">2022-04-05</time>
+  </span>
 </div>
 
       
@@ -174,7 +203,7 @@
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://ctttttttt.github.io/2022/04/05/3/" title="3">https://ctttttttt.github.io/2022/04/05/3/</a>
+    <a href="https://ctttttttt.github.io/2022/04/05/3/" title="TEA">https://ctttttttt.github.io/2022/04/05/3/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -193,7 +222,7 @@
     <div class="item left">
       
 
-  <a href="/2022/04/04/2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclx6phq6j20zk0m8e36.jpg" title="BUU--BabyAlgorithm">
+  <a href="/2022/04/04/2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipevarprfj20zk0m8npd.jpg" title="BUU--BabyAlgorithm">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Re</span>
   <h3>BUU--BabyAlgorithm</h3>
@@ -203,7 +232,7 @@
     <div class="item right">
       
 
-  <a href="/2022/04/05/4/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclh5u05ej20zk0m87df.jpg" title="题解HGAME2022 creakme">
+  <a href="/2022/04/05/4/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclil3m4ej20zk0m8tn8.jpg" title="题解HGAME2022 creakme">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Re</span>
   <h3>题解HGAME2022 creakme</h3>
@@ -225,8 +254,12 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#tea%E5%8A%A0%E5%AF%86"><span class="toc-number">1.</span> <span class="toc-text"> TEA 加密</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2022/04/05/3/" rel="bookmark" title="TEA">TEA</a></li>
+        </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -245,7 +278,7 @@
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">2</span>
+        <span class="count">3</span>
         <span class="name">分类</span>
       </a>
     </div>
@@ -357,7 +390,7 @@
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/05/4/" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></span>
+    <span><a href="/2022/04/04/2/" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></span>
   </li>
 
       
@@ -381,16 +414,19 @@
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/04/2/" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></span>
+    <span><a href="/2022/04/05/4/" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="分类于 加密算法">加密算法</a>
 </div>
 
-    <span><a href="/2022/04/05/3/" title="3">3</a></span>
+    <span><a href="/2022/04/05/3/" title="TEA">TEA</a></span>
   </li>
 
   </ul>
