@@ -27,12 +27,12 @@
   <meta name="keywords" content="CTF" />
 
 
-<link rel="canonical" href="https://ctttttttt.github.io/2022/04/06/6/">
+<link rel="canonical" href="https://ctttttttt.github.io/2022/04/15/9/">
 
 
 
   <title>
-BUUCTF xxor - Re - CTF |
+2020华南师大CTF新生赛maze - 游戏题 - CTF |
 (o゜▽゜)o☆[BINGO!] = 逆向上分之路 = Tuyt的Blog</title>
 <meta name="generator" content="Hexo 5.4.1"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,16 +60,16 @@ BUUCTF xxor - Re - CTF |
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">BUUCTF xxor
+  <h1 itemprop="name headline">2020华南师大CTF新生赛maze
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2022-04-06 16:42:30">
+  <span class="item" title="创建时间：2022-04-15 19:28:46">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2022-04-06T16:42:30+08:00">2022-04-06</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-15T19:28:46+08:00">2022-04-15</time>
   </span>
 </div>
 
@@ -102,12 +102,12 @@ BUUCTF xxor - Re - CTF |
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipevgoki5j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclil3m4ej20zk0m8tn8.jpg"></li>
           <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclx6phq6j20zk0m8e36.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicliierfjj20zk0m8npd.jpg"></li>
         </ul>
       </div>
     </header>
@@ -136,12 +136,12 @@ BUUCTF xxor - Re - CTF |
 <span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/" itemprop="item" rel="index" title="分类于 CTF"><span itemprop="name">CTF</span></a>
 <meta itemprop="position" content="1" /></span>
 <i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/Re/" itemprop="item" rel="index" title="分类于 Re"><span itemprop="name">Re</span></a>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" itemprop="item" rel="index" title="分类于 游戏题"><span itemprop="name">游戏题</span></a>
 <meta itemprop="position" content="2" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://ctttttttt.github.io/2022/04/06/6/">
+  <link itemprop="mainEntityOfPage" href="https://ctttttttt.github.io/2022/04/15/9/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/head.jpg">
@@ -156,27 +156,33 @@ BUUCTF xxor - Re - CTF |
   <div class="body md" itemprop="articleBody">
     
 
-    <h4 id="题解buuctf-xxor"><a class="markdownIt-Anchor" href="#题解buuctf-xxor">#</a> 题解 BUUCTF xxor</h4>
-<h5 id="分析"><a class="markdownIt-Anchor" href="#分析">#</a> 分析</h5>
-<p>首先用 exe 查壳，发现它是 64 位，于是用 IDA 打开看看，按 F5 去看反汇编代码</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220406164420387.png" alt="image-20220406164420387"></p>
-<p>发现它要输入 6 次，然后看到下面的 for 循环，这个上面是把 v6 的东西都放在 dword_601078 里头，然后进行 sub_400686，于是我们点进去，看看这个函数要干嘛。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220406164610798.png" alt="image-20220406164610798"></p>
-<p>然后可以发现这是个魔改的 tea 加密，然后返回，看最外面怎样得到 flag</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220406164704117.png" alt="image-20220406164704117"></p>
-<p>说明要得到 flag 一定要使这个函数正确，才可以得到 flag，那么我们点进去看这个函数在干嘛</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220406164743451.png" alt="image-20220406164743451"></p>
-<p>发现他这里刚好给出了我们 6 个 a 数组的值，与上面的 tea 加密的函数里头的 v3 和 v4 需要的值相对应，于是就能够知道这个会是一个明文</p>
-<p>那么现在就需要找到密匙就能解出来了</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220406164826272.png" alt="image-20220406164826272"></p>
-<p>在前面可以看到这个 a2 于是我们点进去，看看它是个什么东西</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220406164919949.png" alt="image-20220406164919949"></p>
-<p>于是我们很容易得到密匙是 2 2 3 4</p>
-<p>那么就可以写脚本了</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> <span class="keyword">warning</span>(disable:4996)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> a[<span class="number">6</span>] = &#123; <span class="number">3746099070</span>, <span class="number">550153460</span>, <span class="number">3774025685</span>, <span class="number">1548802262</span>, <span class="number">2652626477</span>, <span class="number">2230518816</span> &#125;;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> a2[<span class="number">4</span>] = &#123; <span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span> &#125;;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> v3, v4;</span><br><span class="line">    <span class="type">int</span> v5;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">4</span>; j += <span class="number">2</span>) &#123;</span><br><span class="line">        v3 = a[j];</span><br><span class="line">        v4 = a[j + <span class="number">1</span>];</span><br><span class="line">        v5 = <span class="number">1166789954</span>*<span class="number">0x40</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">63</span>; ++i) &#123;</span><br><span class="line">            v4 -= (v3 + v5 + <span class="number">20</span>) ^ ((v3 &lt;&lt; <span class="number">6</span>) + a2[<span class="number">2</span>]) ^ ((v3 &gt;&gt; <span class="number">9</span>) + a2[<span class="number">3</span>]) ^ <span class="number">0x10</span>;</span><br><span class="line">            v3 -= (v4 + v5 + <span class="number">11</span>) ^ ((v4 &lt;&lt; <span class="number">6</span>) + *a2) ^ ((v4 &gt;&gt; <span class="number">9</span>) + a2[<span class="number">1</span>]) ^ <span class="number">0x20</span>;</span><br><span class="line">            v5 -= <span class="number">1166789954</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        a[j] = v3;</span><br><span class="line">        a[j + <span class="number">1</span>] = v4;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; ++i) </span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; *((<span class="type">char</span>*)&amp;a[i]+<span class="number">2</span>) &lt;&lt; *((<span class="type">char</span>*)&amp;a[i] +<span class="number">1</span>) &lt;&lt; * ((<span class="type">char</span>*)&amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;PAUSE&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>一开始我是用 C 去输出的，发现会出现乱码，于是去看看别人写的脚本，发现这里涉及到了大小端的输出，这里使用的小端序输出，因为之前的是方便于人去看的大端序输出，所以输出的时候需要反过来，因为这里是 64 位所以需要输出三次，如果这里是 32 位就是 + 1 和 a [i] 本身。</p>
-<p>最后得到 flag</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;re_is_great!&#125;</span><br></pre></td></tr></table></figure>
+    <h4 id="2020华南师大CTF新生赛maze"><a href="#2020华南师大CTF新生赛maze" class="headerlink" title="2020华南师大CTF新生赛maze"></a>2020华南师大CTF新生赛maze</h4><h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><p>首先查壳<img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415193004979.png" alt="image-20220415193004979"></p>
+<p>发现这是没有壳32位的，然后把它方如ida去分析</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415193101638.png" alt="image-20220415193101638"></p>
+<p>很容易知道这个是找最短路径的迷宫，于是我们去CreateMap()这个函数去看看这个迷宫是怎样的</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415193340808.png" alt="image-20220415193340808"></p>
+<p>我一开始不知道v2&amp;1然后再v2&gt;&gt;=1是干嘛的，然后去问了一下一个CAS的朋友，才知道这个v2&amp;1是奇数就是它本身，如果不是奇数就是0。这个v2&gt;&gt;=1是除2，向下取整数的意思，判断这个位置是不是1。这里大致就是将num的元素都转换位2进制的意思</p>
+<p>那么下一步就是找到所有的v2然后将其转换成16*16的表，这里就直接IDA动态调试，在这里for循环这里下一个断点，然后去看值</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415194153985.png" alt="image-20220415194153985"></p>
+<p>这是第一个的v2，每到一次这里</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415194245658.png" alt="image-20220415194245658"></p>
+<p>就是一个新的v2的值（停在v1=1的时候，才会出现新v2）后将其转化成表格</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">0xffff</span>,<span class="number">0x83F7</span>,<span class="number">0xBBF7</span>,<span class="number">0xBB17</span>,<span class="number">0xBB57</span>,<span class="number">0xB857</span>,<span class="number">0xBF57</span>,<span class="number">0xBF17</span>,<span class="number">0xBFB7</span>,<span class="number">0xBFB7</span>,<span class="number">0x8611</span>,<span class="number">0xF7B5</span>,<span class="number">0xF7B5</span>,<span class="number">0x7B4</span>,<span class="number">0xFF87</span>,<span class="number">0xFFFF</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    a = <span class="built_in">bin</span>(i)</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+
+<p>原本迷宫倒数第三行的0x7B4为<img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415201720434.png" alt="image-20220415201720434"></p>
+<p>然后根据二进制，填充一下得到下图</p>
+<p>那么得到迷宫</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415200833555.png" alt="image-20220415200833555"></p>
+<p>然后去check函数找找有没有操作的规则</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415201831928.png" alt="image-20220415201831928"></p>
+<p>由v6和v7的初始值，以及增减容易得出</p>
+<p>有四个方向k，h，j，l</p>
+<p>v6控制行，v7控制列<br>l为右移一个<br>h左移一个<br>k上移一个<br>j下移一个</p>
+<h5 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h5><p>最后去走迷宫</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415202049313.png" alt="image-20220415202049313"></p>
+<p>然后得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;llllkkkhhhkkkkkkkkklllljjjjllljjljjjjjjjlllkkkklljjjl&#125;</span><br></pre></td></tr></table></figure>
+
 
       <div class="tags">
           <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
@@ -191,7 +197,7 @@ BUUCTF xxor - Re - CTF |
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-04-06 16:52:40" itemprop="dateModified" datetime="2022-04-06T16:52:40+08:00">2022-04-06</time>
+    <time title="修改时间：2022-04-15 20:23:48" itemprop="dateModified" datetime="2022-04-15T20:23:48+08:00">2022-04-15</time>
   </span>
 </div>
 
@@ -204,7 +210,7 @@ BUUCTF xxor - Re - CTF |
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://ctttttttt.github.io/2022/04/06/6/" title="BUUCTF xxor">https://ctttttttt.github.io/2022/04/06/6/</a>
+    <a href="https://ctttttttt.github.io/2022/04/15/9/" title="2020华南师大CTF新生赛maze">https://ctttttttt.github.io/2022/04/15/9/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -223,22 +229,14 @@ BUUCTF xxor - Re - CTF |
     <div class="item left">
       
 
-  <a href="/2022/04/05/5/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipet4bz0yj20zk0m8e81.jpg" title="RC4">
+  <a href="/2022/04/10/8/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipey0a334j20zk0m8qpt.jpg" title="BUU[HDCTF2019]Maze">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> 加密算法</span>
-  <h3>RC4</h3>
+  <span class="category"><i class="ic i-flag"></i> 游戏题</span>
+  <h3>BUU[HDCTF2019]Maze</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/2022/04/08/7/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicli3sbvtj20zk0m8x6p.jpg" title="2019华南师大CTF新生赛maze">
-  <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> 游戏题</span>
-  <h3>2019华南师大CTF新生赛maze</h3>
-  </a>
-
     </div>
 </div>
 
@@ -255,11 +253,11 @@ BUUCTF xxor - Re - CTF |
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3buuctf-xxor"><span class="toc-number">1.</span> <span class="toc-text"> 题解 BUUCTF xxor</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text"> 分析</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#2020%E5%8D%8E%E5%8D%97%E5%B8%88%E5%A4%A7CTF%E6%96%B0%E7%94%9F%E8%B5%9Bmaze"><span class="toc-number">1.</span> <span class="toc-text">2020华南师大CTF新生赛maze</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">解决方法</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2022/03/28/123-1/" rel="bookmark" title="easyre题解">easyre题解</a></li><li><a href="/2022/03/28/1/" rel="bookmark" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></li><li><a href="/2022/04/04/2/" rel="bookmark" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></li><li><a href="/2022/04/05/4/" rel="bookmark" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></li><li class="active"><a href="/2022/04/06/6/" rel="bookmark" title="BUUCTF xxor">BUUCTF xxor</a></li>
+          <li><a href="/2022/04/08/7/" rel="bookmark" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a></li><li><a href="/2022/04/10/8/" rel="bookmark" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a></li><li class="active"><a href="/2022/04/15/9/" rel="bookmark" title="2020华南师大CTF新生赛maze">2020华南师大CTF新生赛maze</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -347,12 +345,10 @@ BUUCTF xxor - Re - CTF |
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2022/04/05/5/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2022/04/08/7/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -376,10 +372,10 @@ BUUCTF xxor - Re - CTF |
 <div class="breadcrumb">
 <a href="/categories/CTF/" title="分类于 CTF">CTF</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="分类于 加密算法">加密算法</a>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/05/3/" title="TEA">TEA</a></span>
+    <span><a href="/2022/04/06/6/" title="BUUCTF xxor">BUUCTF xxor</a></span>
   </li>
 
       
@@ -403,7 +399,7 @@ BUUCTF xxor - Re - CTF |
 <a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
 </div>
 
-    <span><a href="/2022/04/15/9/" title="2020华南师大CTF新生赛maze">2020华南师大CTF新生赛maze</a></span>
+    <span><a href="/2022/04/08/7/" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a></span>
   </li>
 
       
@@ -424,10 +420,10 @@ BUUCTF xxor - Re - CTF |
 <div class="breadcrumb">
 <a href="/categories/CTF/" title="分类于 CTF">CTF</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+<a href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="分类于 加密算法">加密算法</a>
 </div>
 
-    <span><a href="/2022/04/06/6/" title="BUUCTF xxor">BUUCTF xxor</a></span>
+    <span><a href="/2022/04/05/3/" title="TEA">TEA</a></span>
   </li>
 
       
@@ -436,22 +432,10 @@ BUUCTF xxor - Re - CTF |
 <div class="breadcrumb">
 <a href="/categories/CTF/" title="分类于 CTF">CTF</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
 </div>
 
-    <span><a href="/2022/03/28/123-1/" title="easyre题解">easyre题解</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/03/28/1/" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></span>
+    <span><a href="/2022/04/10/8/" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a></span>
   </li>
 
       
@@ -472,10 +456,22 @@ BUUCTF xxor - Re - CTF |
 <div class="breadcrumb">
 <a href="/categories/CTF/" title="分类于 CTF">CTF</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/08/7/" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a></span>
+    <span><a href="/2022/03/28/1/" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/03/28/123-1/" title="easyre题解">easyre题解</a></span>
   </li>
 
       
@@ -487,7 +483,7 @@ BUUCTF xxor - Re - CTF |
 <a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
 </div>
 
-    <span><a href="/2022/04/10/8/" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a></span>
+    <span><a href="/2022/04/15/9/" title="2020华南师大CTF新生赛maze">2020华南师大CTF新生赛maze</a></span>
   </li>
 
   </ul>
@@ -518,7 +514,7 @@ BUUCTF xxor - Re - CTF |
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2022/04/06/6/',
+    path: '2022/04/15/9/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
