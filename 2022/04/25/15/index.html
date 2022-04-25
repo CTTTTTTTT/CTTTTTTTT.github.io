@@ -27,12 +27,12 @@
   <meta name="keywords" content="CTF" />
 
 
-<link rel="canonical" href="https://ctttttttt.github.io/2022/04/23/12/">
+<link rel="canonical" href="https://ctttttttt.github.io/2022/04/25/15/">
 
 
 
   <title>
-BUU[FlareOn4]IgniteMe - Re - CTF |
+BUU[Zer0pts2020]easy strcmp - Re - CTF |
 (o゜▽゜)o☆[BINGO!] = 逆向上分之路 = Tuyt的Blog</title>
 <meta name="generator" content="Hexo 5.4.1"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,16 +60,16 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">BUU[FlareOn4]IgniteMe
+  <h1 itemprop="name headline">BUU[Zer0pts2020]easy strcmp
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2022-04-23 21:21:01">
+  <span class="item" title="创建时间：2022-04-25 20:28:41">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2022-04-23T21:21:01+08:00">2022-04-23</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-25T20:28:41+08:00">2022-04-25</time>
   </span>
 </div>
 
@@ -102,12 +102,12 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/0073WLvOgy1gxjl0k7hitj31hc0u01b1.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicliwyw55j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
           <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipet8c1a2j20zk0m8kct.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeuv80yoj20zk0m8kjl.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
-          <li class="item" data-background-image="https://images8.alphacoders.com/108/thumbbig-1081217.webp"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeybxm1pj20zk0m8niv.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeubcbajj20zk0m8h1h.jpg"></li>
         </ul>
       </div>
     </header>
@@ -141,7 +141,7 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://ctttttttt.github.io/2022/04/23/12/">
+  <link itemprop="mainEntityOfPage" href="https://ctttttttt.github.io/2022/04/25/15/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/head.jpg">
@@ -156,28 +156,28 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
   <div class="body md" itemprop="articleBody">
     
 
-    <h4 id="BUU-FlareOn4-IgniteMe"><a href="#BUU-FlareOn4-IgniteMe" class="headerlink" title="BUU[FlareOn4]IgniteMe"></a>BUU[FlareOn4]IgniteMe</h4><h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><p>首先查壳，发现是32位的，然后放入IDA分析</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423212431488.png" alt="image-20220423212431488"></p>
-<p>然后发现有用的好像只有sub_4010F0和sub_401050这两个函数，接着一个个点进去看</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423212538675.png" alt="image-20220423212538675"></p>
-<p>这个函数其实作用并不大，接着去看看判断函数</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423212644900.png" alt="image-20220423212644900"></p>
-<p>这里1020点进去很显然是个读取数组长度的</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423212807857.png" alt="image-20220423212807857"></p>
-<p>1000点进去看</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423212851148.png" alt="image-20220423212851148"></p>
-<p>看不懂在干嘛，先跳过。接着是两个for循环，可以看到第一个for循环在异或，第二个for循环有个if，看看那几个数组，发现这是个与最后flag进行的一个比较</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423213001253.png" alt="image-20220423213001253"></p>
-<p>那么前面一个for循环时解体的关键，现在就差第一次for循环的v4值不知道了，于是下个断点去看</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423213218032.png" alt="image-20220423213218032"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423213233636.png" alt="image-20220423213233636"></p>
-<p>那么v4=4也出来了，开始写脚本</p>
-<h5 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">char</span> a[]=&#123;<span class="number">0x0D</span>, <span class="number">0x26</span>, <span class="number">0x49</span>, <span class="number">0x45</span>, <span class="number">0x2A</span>, <span class="number">0x17</span>, <span class="number">0x78</span>, <span class="number">0x44</span>, <span class="number">0x2B</span>, <span class="number">0x6C</span>, </span><br><span class="line">  			  <span class="number">0x5D</span>, <span class="number">0x5E</span>, <span class="number">0x45</span>, <span class="number">0x12</span>, <span class="number">0x2F</span>, <span class="number">0x17</span>, <span class="number">0x2B</span>, <span class="number">0x44</span>, <span class="number">0x6F</span>, <span class="number">0x6E</span>, </span><br><span class="line">  			  <span class="number">0x56</span>, <span class="number">0x09</span>, <span class="number">0x5F</span>, <span class="number">0x45</span>, <span class="number">0x47</span>, <span class="number">0x73</span>, <span class="number">0x26</span>, <span class="number">0x0A</span>, <span class="number">0x0D</span>, <span class="number">0x13</span>, </span><br><span class="line">    	  	  <span class="number">0x17</span>, <span class="number">0x48</span>, <span class="number">0x42</span>, <span class="number">0x01</span>, <span class="number">0x40</span>, <span class="number">0x4D</span>, <span class="number">0x0C</span>, <span class="number">0x02</span>, <span class="number">0x69</span>&#125;;</span><br><span class="line">    <span class="type">int</span> b=<span class="built_in">strlen</span>(a);</span><br><span class="line">    <span class="type">int</span> v4=<span class="number">4</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=b<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i]=a[i]^v4;</span><br><span class="line">		v4=a[i];		</span><br><span class="line">	&#125;	  	  </span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <h4 id="BUU-Zer0pts2020-easy-strcmp"><a href="#BUU-Zer0pts2020-easy-strcmp" class="headerlink" title="BUU[Zer0pts2020]easy strcmp"></a>BUU[Zer0pts2020]easy strcmp</h4><h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><p>首先将它查壳，发现为64位无壳，然后放入IDA分析，首先shift+F12去找找有什么关键的地方</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220425203042575.png" alt="image-20220425203042575"></p>
+<p>然后交叉引用去找它</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220425203115808.png" alt="image-20220425203115808"></p>
+<p>发现只要a2等于后面一串字符就可以了，于是去试flag发现错误，肯定没这么简单。于是我想起了之前做的题，可能藏在initr里，于是进去看看</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220425203254996.png" alt="image-20220425203254996"></p>
+<p>然后去看看funcs_889的交叉引用</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220425203340893.png" alt="image-20220425203340893"></p>
+<p>果然是这里有东西被藏起来了，这里进去，发现并没有其他函数，而是一些代码，于是直接跟进funcs_889</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220425203647777.png" alt="image-20220425203647777"></p>
+<p>看到sub_795是之前没有见过的，于是点进去看看</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220425203739962.png" alt="image-20220425203739962"></p>
+<p>看到 off_201028 = sub_6EA，说明off_201028这个函数被赋了新的函数在里面，于是点进去看看<img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220425204137015.png" alt="image-20220425204137015"></p>
+<p>这里也就是说off_201028是直接用了strcmp这个函数的地址，而off_201028又被sub_6EA重新赋新的东西，所以说sub_6EA表示是strcmp的意思，于是点进sub_6EA去看看</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220425204342514.png" alt="image-20220425204342514"></p>
+<p>于是开始写脚本</p>
+<h5 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">char</span> a[]=<span class="string">&quot;zer0pts&#123;********CENSORED********&#125;&quot;</span>;</span><br><span class="line">	<span class="type">uint64_t</span> b[]=&#123;<span class="number">0</span>, <span class="number">0x410A4335494A0942</span>, <span class="number">0x0B0EF2F50BE619F0</span>, <span class="number">0x4F0A3A064A35282B</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		*((<span class="type">uint64_t</span>*)&amp;(a[i*<span class="number">8</span>]))+=b[i];<span class="comment">//这里是小端序的输出，所以用这个格式 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>最后得到flag</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R_y0u_H0t_3n0ugH_t0_1gn1t3@flare-on.com</span><br></pre></td></tr></table></figure>
+<p>得到flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zer0pts&#123;l3ts_m4k3_4_DETOUR_t0d4y&#125;</span><br></pre></td></tr></table></figure>
 
-<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>这题就是简单的异或，主要是需要用到IDA的动态调试去找初始值v4</p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>要善于去查找和交叉引用以及深入地跟踪，还有注意大小端的交换！</p>
 
       <div class="tags">
           <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
@@ -192,7 +192,7 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-04-23 21:37:04" itemprop="dateModified" datetime="2022-04-23T21:37:04+08:00">2022-04-23</time>
+    <time title="修改时间：2022-04-25 21:22:59" itemprop="dateModified" datetime="2022-04-25T21:22:59+08:00">2022-04-25</time>
   </span>
 </div>
 
@@ -205,7 +205,7 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://ctttttttt.github.io/2022/04/23/12/" title="BUU[FlareOn4]IgniteMe">https://ctttttttt.github.io/2022/04/23/12/</a>
+    <a href="https://ctttttttt.github.io/2022/04/25/15/" title="BUU[Zer0pts2020]easy strcmp">https://ctttttttt.github.io/2022/04/25/15/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -224,22 +224,14 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
     <div class="item left">
       
 
-  <a href="/2022/04/19/11/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicivghyooj20zk0m8dir.jpg" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">
+  <a href="/2022/04/25/14/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclfdu6exj20zk0m87hw.jpg" title="BUU[ACTF新生赛2020]Oruga">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> Re</span>
-  <h3>关于base64换表及交叉引用BUU[WUSTCTF2020]level3</h3>
+  <span class="category"><i class="ic i-flag"></i> 游戏题</span>
+  <h3>BUU[ACTF新生赛2020]Oruga</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/2022/04/24/13/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipevuctzzj20zk0m84qp.jpg" title="BUU[FlareOn6]Overlong">
-  <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> Re</span>
-  <h3>BUU[FlareOn6]Overlong</h3>
-  </a>
-
     </div>
 </div>
 
@@ -256,11 +248,11 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#BUU-FlareOn4-IgniteMe"><span class="toc-number">1.</span> <span class="toc-text">BUU[FlareOn4]IgniteMe</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-number">1.2.</span> <span class="toc-text">脚本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#BUU-Zer0pts2020-easy-strcmp"><span class="toc-number">1.</span> <span class="toc-text">BUU[Zer0pts2020]easy strcmp</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-number">1.2.</span> <span class="toc-text">脚本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2022/03/28/123-1/" rel="bookmark" title="easyre题解">easyre题解</a></li><li><a href="/2022/03/28/1/" rel="bookmark" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></li><li><a href="/2022/04/04/2/" rel="bookmark" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></li><li><a href="/2022/04/05/4/" rel="bookmark" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></li><li><a href="/2022/04/06/6/" rel="bookmark" title="BUUCTF xxor">BUUCTF xxor</a></li><li><a href="/2022/04/17/10/" rel="bookmark" title="恒月杯18年9月NewDriver">恒月杯18年9月NewDriver</a></li><li><a href="/2022/04/19/11/" rel="bookmark" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">关于base64换表及交叉引用BUU[WUSTCTF2020]level3</a></li><li class="active"><a href="/2022/04/23/12/" rel="bookmark" title="BUU[FlareOn4]IgniteMe">BUU[FlareOn4]IgniteMe</a></li><li><a href="/2022/04/24/13/" rel="bookmark" title="BUU[FlareOn6]Overlong">BUU[FlareOn6]Overlong</a></li><li><a href="/2022/04/25/15/" rel="bookmark" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></li>
+          <li><a href="/2022/03/28/123-1/" rel="bookmark" title="easyre题解">easyre题解</a></li><li><a href="/2022/03/28/1/" rel="bookmark" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></li><li><a href="/2022/04/04/2/" rel="bookmark" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></li><li><a href="/2022/04/05/4/" rel="bookmark" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></li><li><a href="/2022/04/06/6/" rel="bookmark" title="BUUCTF xxor">BUUCTF xxor</a></li><li><a href="/2022/04/17/10/" rel="bookmark" title="恒月杯18年9月NewDriver">恒月杯18年9月NewDriver</a></li><li><a href="/2022/04/19/11/" rel="bookmark" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">关于base64换表及交叉引用BUU[WUSTCTF2020]level3</a></li><li><a href="/2022/04/23/12/" rel="bookmark" title="BUU[FlareOn4]IgniteMe">BUU[FlareOn4]IgniteMe</a></li><li><a href="/2022/04/24/13/" rel="bookmark" title="BUU[FlareOn6]Overlong">BUU[FlareOn6]Overlong</a></li><li class="active"><a href="/2022/04/25/15/" rel="bookmark" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -348,12 +340,10 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2022/04/19/11/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2022/04/24/13/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -377,34 +367,10 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
 <div class="breadcrumb">
 <a href="/categories/CTF/" title="分类于 CTF">CTF</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/10/8/" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
-</div>
-
-    <span><a href="/2022/04/15/9/" title="2020华南师大CTF新生赛maze">2020华南师大CTF新生赛maze</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
-</div>
-
-    <span><a href="/2022/04/25/14/" title="BUU[ACTF新生赛2020]Oruga">BUU[ACTF新生赛2020]Oruga</a></span>
+    <span><a href="/2022/04/19/11/" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">关于base64换表及交叉引用BUU[WUSTCTF2020]level3</a></span>
   </li>
 
       
@@ -416,7 +382,7 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/24/13/" title="BUU[FlareOn6]Overlong">BUU[FlareOn6]Overlong</a></span>
+    <span><a href="/2022/03/28/123-1/" title="easyre题解">easyre题解</a></span>
   </li>
 
       
@@ -425,10 +391,10 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
 <div class="breadcrumb">
 <a href="/categories/CTF/" title="分类于 CTF">CTF</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
 </div>
 
-    <span><a href="/2022/04/23/12/" title="BUU[FlareOn4]IgniteMe">BUU[FlareOn4]IgniteMe</a></span>
+    <span><a href="/2022/04/08/7/" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a></span>
   </li>
 
       
@@ -449,10 +415,10 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
 <div class="breadcrumb">
 <a href="/categories/CTF/" title="分类于 CTF">CTF</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+<a href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="分类于 加密算法">加密算法</a>
 </div>
 
-    <span><a href="/2022/04/06/6/" title="BUUCTF xxor">BUUCTF xxor</a></span>
+    <span><a href="/2022/04/05/5/" title="RC4">RC4</a></span>
   </li>
 
       
@@ -476,7 +442,7 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/25/15/" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></span>
+    <span><a href="/2022/04/24/13/" title="BUU[FlareOn6]Overlong">BUU[FlareOn6]Overlong</a></span>
   </li>
 
       
@@ -488,7 +454,31 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
 <a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
 </div>
 
-    <span><a href="/2022/04/08/7/" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a></span>
+    <span><a href="/2022/04/15/9/" title="2020华南师大CTF新生赛maze">2020华南师大CTF新生赛maze</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/25/15/" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/23/12/" title="BUU[FlareOn4]IgniteMe">BUU[FlareOn4]IgniteMe</a></span>
   </li>
 
   </ul>
@@ -519,7 +509,7 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2022/04/23/12/',
+    path: '2022/04/25/15/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
