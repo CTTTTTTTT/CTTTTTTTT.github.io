@@ -27,12 +27,12 @@
   <meta name="keywords" content="CTF" />
 
 
-<link rel="canonical" href="https://ctttttttt.github.io/2022/04/10/8/">
+<link rel="canonical" href="https://ctttttttt.github.io/2022/04/26/16/">
 
 
 
   <title>
-BUU[HDCTF2019]Maze - 游戏题 - CTF |
+美团CTF2021 高校安全挑战赛 Random - Re - CTF |
 (o゜▽゜)o☆[BINGO!] = 逆向上分之路 = Tuyt的Blog</title>
 <meta name="generator" content="Hexo 5.4.1"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,16 +60,16 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">BUU[HDCTF2019]Maze
+  <h1 itemprop="name headline">美团CTF2021 高校安全挑战赛 Random
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2022-04-10 16:20:16">
+  <span class="item" title="创建时间：2022-04-26 20:47:42">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2022-04-10T16:20:16+08:00">2022-04-10</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-26T20:47:42+08:00">2022-04-26</time>
   </span>
 </div>
 
@@ -102,12 +102,12 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://images8.alphacoders.com/108/thumbbig-1081217.webp"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicivghyooj20zk0m8dir.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciukx8a7j20zk0m8aio.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclil3m4ej20zk0m8tn8.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
           <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclgi503lj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclip4jbpj20zk0m87cv.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
         </ul>
       </div>
     </header>
@@ -136,12 +136,12 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
 <span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/" itemprop="item" rel="index" title="分类于 CTF"><span itemprop="name">CTF</span></a>
 <meta itemprop="position" content="1" /></span>
 <i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" itemprop="item" rel="index" title="分类于 游戏题"><span itemprop="name">游戏题</span></a>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/Re/" itemprop="item" rel="index" title="分类于 Re"><span itemprop="name">Re</span></a>
 <meta itemprop="position" content="2" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://ctttttttt.github.io/2022/04/10/8/">
+  <link itemprop="mainEntityOfPage" href="https://ctttttttt.github.io/2022/04/26/16/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/head.jpg">
@@ -156,32 +156,22 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
   <div class="body md" itemprop="articleBody">
     
 
-    <h4 id="BUU-HDCTF2019-Maze"><a href="#BUU-HDCTF2019-Maze" class="headerlink" title="BUU[HDCTF2019]Maze"></a>BUU[HDCTF2019]Maze</h4><h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><p>首先查壳发现是upx的壳，然后去壳后放进IDA</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220410165926336.png" alt="image-20220410165926336"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220410162138682.png" alt="image-20220410162138682"></p>
-<p>发现这里有报红，可以推测这里是有花指令使它出现错误的干扰</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220410162246197.png" alt="image-20220410162246197"></p>
-<p>这里的0E8h是对应的call，很显然是个垃圾数据</p>
-<p>我们先把unk_40102F这一部分转换成有效代码（按C）</p>
-<p>然后得到</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220410170211299.png" alt="image-20220410170211299"></p>
-<p>这是有效代码了，jnz也正常了，但是我们还是不可以F5，然后我们去上面的主函数部分，声明（按P）一下主函数</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220410170416065.png" alt="image-20220410170416065"></p>
-<p>然后得到了可F5的函数</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220410170502039.png" alt="image-20220410170502039"></p>
-<p>F5进去之后，看到’a’,’w’,’d’,’s’能很容易推断出这是一个迷宫题</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220410171920906.png" alt="image-20220410171920906"></p>
-<p>然后我们看到这两个数据，判断出最开始的初始位置（0,7）</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220410170650035.png" alt="image-20220410170650035"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220410171846319.png" alt="image-20220410171846319"></p>
-<h5 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h5><p>然后我们shift+12去看看迷宫长什么样</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220410172834791.png" alt="image-20220410172834791"></p>
-<p>然后很容易发现它是10*7的迷宫（画得丑了些）</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220410172904592.png" alt="image-20220410172904592"></p>
-<p>然后我们就走迷宫</p>
-<p>得到</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;ssaaasaassdddw&#125;</span><br></pre></td></tr></table></figure>
+    <h4 id="美团CTF2021-高校安全挑战赛-Random"><a href="#美团CTF2021-高校安全挑战赛-Random" class="headerlink" title="美团CTF2021 高校安全挑战赛 Random"></a>美团CTF2021 高校安全挑战赛 Random</h4><h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><p>首先查壳，发现没有壳32位exe，然后放入IDA中分析</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220426204932647.png" alt="image-20220426204932647"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220426204913349.png" alt="image-20220426204913349"></p>
+<p>首先看到congratulation这里，就知道条件是要v7为42，然后发现v7是在上面的if( a == 43 )这个判断语句中，分析一下。得出b这个函数不断与 byte_502138这个函数去比较，每一位，也就是说能知道这个b函数是为42个成员在里面</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220426205346872.png" alt="image-20220426205346872"></p>
+<p>然后也可以知道这个b函数就是找到flag的关键，看到最开头的部分</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220426205430567.png" alt="image-20220426205430567"></p>
+<p>要有scanf的输出也就能知道a的初始值为0，再结合这个if的条件和它对应的else语句知道这里是不断的与随机数去异或能得到flag，然后我直接去动态调试去找第一个随机数的种子</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220426205610063.png" alt="image-20220426205610063"></p>
+<p>然后开始写脚本</p>
+<h5 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> b[]=&#123;</span><br><span class="line">  <span class="number">0x3E</span>, <span class="number">0xCD</span>, <span class="number">0xAA</span>, <span class="number">0x8E</span>, <span class="number">0x96</span>, <span class="number">0x1F</span>, <span class="number">0x89</span>, <span class="number">0xCD</span>, <span class="number">0xDB</span>, <span class="number">0xF1</span>, </span><br><span class="line">  <span class="number">0x70</span>, <span class="number">0xF2</span>, <span class="number">0xA9</span>, <span class="number">0x9C</span>, <span class="number">0xC2</span>, <span class="number">0x8B</span>, <span class="number">0xF2</span>, <span class="number">0xFE</span>, <span class="number">0xAD</span>, <span class="number">0x8B</span>, </span><br><span class="line">  <span class="number">0x58</span>, <span class="number">0x7C</span>, <span class="number">0x2F</span>, <span class="number">0x03</span>, <span class="number">0x4A</span>, <span class="number">0x65</span>, <span class="number">0x31</span>, <span class="number">0x89</span>, <span class="number">0x76</span>, <span class="number">0x57</span>, </span><br><span class="line">  <span class="number">0x88</span>, <span class="number">0xDF</span>, <span class="number">0xB8</span>, <span class="number">0xE9</span>, <span class="number">0x01</span>, <span class="number">0xE9</span>, <span class="number">0xDE</span>, <span class="number">0xE5</span>, <span class="number">0x86</span>, <span class="number">0x68</span>, </span><br><span class="line">  <span class="number">0x8F</span>, <span class="number">0x24</span>&#125;;</span><br><span class="line">	<span class="type">int</span> c=<span class="number">0x29</span>;<span class="comment">//也是第一个随机数 </span></span><br><span class="line">	<span class="type">int</span> flag[<span class="number">42</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="type">int</span> d;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">42</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		srand(c);<span class="comment">//设置第一个随机数种子 </span></span><br><span class="line">		srand(rand());<span class="comment">//拿第一个随机数作为第二个随机数的随机数种子 </span></span><br><span class="line">		flag[i] = rand() ^ b[i];<span class="comment">//用第三个随机数去异或 </span></span><br><span class="line">		c = rand();<span class="comment">//c放的是第四个随机数 </span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,flag[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>得到flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;3e625fe0-fb18-4f87-93c1-1ec217f86796&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>这里基本的分析还是能动的，如果实在是不知道可以去动态调试一下看看总体的过程。然后就是对srand和rand函数的了解要深刻，这里一开始自己写脚本的时候一直错在srand和rand函数这里，后来看了别人的WP才慢慢弄懂。</p>
 
       <div class="tags">
           <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
@@ -196,7 +186,7 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-04-10 17:31:05" itemprop="dateModified" datetime="2022-04-10T17:31:05+08:00">2022-04-10</time>
+    <time title="修改时间：2022-04-26 20:59:13" itemprop="dateModified" datetime="2022-04-26T20:59:13+08:00">2022-04-26</time>
   </span>
 </div>
 
@@ -209,7 +199,7 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://ctttttttt.github.io/2022/04/10/8/" title="BUU[HDCTF2019]Maze">https://ctttttttt.github.io/2022/04/10/8/</a>
+    <a href="https://ctttttttt.github.io/2022/04/26/16/" title="美团CTF2021 高校安全挑战赛 Random">https://ctttttttt.github.io/2022/04/26/16/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -228,22 +218,14 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
     <div class="item left">
       
 
-  <a href="/2022/04/08/7/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclg5ms2rj20zk0m8u0x.jpg" title="2019华南师大CTF新生赛maze">
+  <a href="/2022/04/25/15/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipetlbztpj20zk0m84qp.jpg" title="BUU[Zer0pts2020]easy strcmp">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> 游戏题</span>
-  <h3>2019华南师大CTF新生赛maze</h3>
+  <span class="category"><i class="ic i-flag"></i> Re</span>
+  <h3>BUU[Zer0pts2020]easy strcmp</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/2022/04/15/9/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicit4jrvuj20zk0m8785.jpg" title="2020华南师大CTF新生赛maze">
-  <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> 游戏题</span>
-  <h3>2020华南师大CTF新生赛maze</h3>
-  </a>
-
     </div>
 </div>
 
@@ -260,11 +242,11 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#BUU-HDCTF2019-Maze"><span class="toc-number">1.</span> <span class="toc-text">BUU[HDCTF2019]Maze</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">解决方法</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BE%8E%E5%9B%A2CTF2021-%E9%AB%98%E6%A0%A1%E5%AE%89%E5%85%A8%E6%8C%91%E6%88%98%E8%B5%9B-Random"><span class="toc-number">1.</span> <span class="toc-text">美团CTF2021 高校安全挑战赛 Random</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-number">1.2.</span> <span class="toc-text">脚本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2022/04/08/7/" rel="bookmark" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a></li><li class="active"><a href="/2022/04/10/8/" rel="bookmark" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a></li><li><a href="/2022/04/15/9/" rel="bookmark" title="2020华南师大CTF新生赛maze">2020华南师大CTF新生赛maze</a></li><li><a href="/2022/04/25/14/" rel="bookmark" title="BUU[ACTF新生赛2020]Oruga">BUU[ACTF新生赛2020]Oruga</a></li>
+          <li><a href="/2022/03/28/123-1/" rel="bookmark" title="easyre题解">easyre题解</a></li><li><a href="/2022/03/28/1/" rel="bookmark" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></li><li><a href="/2022/04/04/2/" rel="bookmark" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></li><li><a href="/2022/04/05/4/" rel="bookmark" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></li><li><a href="/2022/04/06/6/" rel="bookmark" title="BUUCTF xxor">BUUCTF xxor</a></li><li><a href="/2022/04/17/10/" rel="bookmark" title="恒月杯18年9月NewDriver">恒月杯18年9月NewDriver</a></li><li><a href="/2022/04/19/11/" rel="bookmark" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">关于base64换表及交叉引用BUU[WUSTCTF2020]level3</a></li><li><a href="/2022/04/23/12/" rel="bookmark" title="BUU[FlareOn4]IgniteMe">BUU[FlareOn4]IgniteMe</a></li><li><a href="/2022/04/24/13/" rel="bookmark" title="BUU[FlareOn6]Overlong">BUU[FlareOn6]Overlong</a></li><li><a href="/2022/04/25/15/" rel="bookmark" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></li><li class="active"><a href="/2022/04/26/16/" rel="bookmark" title="美团CTF2021 高校安全挑战赛 Random">美团CTF2021 高校安全挑战赛 Random</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -352,12 +334,10 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2022/04/08/7/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2022/04/15/9/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -381,10 +361,70 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
 <div class="breadcrumb">
 <a href="/categories/CTF/" title="分类于 CTF">CTF</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="分类于 加密算法">加密算法</a>
+</div>
+
+    <span><a href="/2022/04/05/5/" title="RC4">RC4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/25/15/" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/04/2/" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
 </div>
 
     <span><a href="/2022/04/08/7/" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
+</div>
+
+    <span><a href="/2022/04/25/14/" title="BUU[ACTF新生赛2020]Oruga">BUU[ACTF新生赛2020]Oruga</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/19/11/" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">关于base64换表及交叉引用BUU[WUSTCTF2020]level3</a></span>
   </li>
 
       
@@ -408,54 +448,6 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/04/2/" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="分类于 加密算法">加密算法</a>
-</div>
-
-    <span><a href="/2022/04/05/5/" title="RC4">RC4</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/04/06/6/" title="BUUCTF xxor">BUUCTF xxor</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/03/28/123-1/" title="easyre题解">easyre题解</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
     <span><a href="/2022/04/26/16/" title="美团CTF2021 高校安全挑战赛 Random">美团CTF2021 高校安全挑战赛 Random</a></span>
   </li>
 
@@ -468,7 +460,7 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/24/13/" title="BUU[FlareOn6]Overlong">BUU[FlareOn6]Overlong</a></span>
+    <span><a href="/2022/04/05/4/" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></span>
   </li>
 
       
@@ -477,22 +469,10 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
 <div class="breadcrumb">
 <a href="/categories/CTF/" title="分类于 CTF">CTF</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
 </div>
 
-    <span><a href="/2022/04/25/15/" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="分类于 加密算法">加密算法</a>
-</div>
-
-    <span><a href="/2022/04/05/3/" title="TEA">TEA</a></span>
+    <span><a href="/2022/04/10/8/" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a></span>
   </li>
 
   </ul>
@@ -523,7 +503,7 @@ BUU[HDCTF2019]Maze - 游戏题 - CTF |
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2022/04/10/8/',
+    path: '2022/04/26/16/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
