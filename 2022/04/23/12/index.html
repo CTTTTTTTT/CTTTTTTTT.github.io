@@ -102,12 +102,12 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclx29mstj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh3brzpj20zk0m8ann.jpg"></li>
-          <li class="item" data-background-image="https://images8.alphacoders.com/108/thumbbig-1081217.webp"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeyonbf9j20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclwrdwyaj20zk0m8are.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipexe4oykj20zk0m87ji.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
         </ul>
       </div>
     </header>
@@ -156,28 +156,30 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
   <div class="body md" itemprop="articleBody">
     
 
-    <h4 id="BUU-FlareOn4-IgniteMe"><a href="#BUU-FlareOn4-IgniteMe" class="headerlink" title="BUU[FlareOn4]IgniteMe"></a>BUU[FlareOn4]IgniteMe</h4><h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><p>首先查壳，发现是32位的，然后放入IDA分析</p>
+    <h4 id="buuflareon4igniteme"><a class="markdownIt-Anchor" href="#buuflareon4igniteme">#</a> BUU[FlareOn4]IgniteMe</h4>
+<h5 id="分析"><a class="markdownIt-Anchor" href="#分析">#</a> 分析</h5>
+<p>首先查壳，发现是 32 位的，然后放入 IDA 分析</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423212431488.png" alt="image-20220423212431488"></p>
-<p>然后发现有用的好像只有sub_4010F0和sub_401050这两个函数，接着一个个点进去看</p>
+<p>然后发现有用的好像只有 sub_4010F0 和 sub_401050 这两个函数，接着一个个点进去看</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423212538675.png" alt="image-20220423212538675"></p>
 <p>这个函数其实作用并不大，接着去看看判断函数</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423212644900.png" alt="image-20220423212644900"></p>
-<p>这里1020点进去很显然是个读取数组长度的</p>
+<p>这里 1020 点进去很显然是个读取数组长度的</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423212807857.png" alt="image-20220423212807857"></p>
-<p>1000点进去看</p>
+<p>1000 点进去看</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423212851148.png" alt="image-20220423212851148"></p>
-<p>看不懂在干嘛，先跳过。接着是两个for循环，可以看到第一个for循环在异或，第二个for循环有个if，看看那几个数组，发现这是个与最后flag进行的一个比较</p>
+<p>看不懂在干嘛，先跳过。接着是两个 for 循环，可以看到第一个 for 循环在异或，第二个 for 循环有个 if，看看那几个数组，发现这是个与最后 flag 进行的一个比较</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423213001253.png" alt="image-20220423213001253"></p>
-<p>那么前面一个for循环时解体的关键，现在就差第一次for循环的v4值不知道了，于是下个断点去看</p>
+<p>那么前面一个 for 循环时解题的关键，现在就差第一次 for 循环的 v4 值不知道了，于是下个断点去看</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423213218032.png" alt="image-20220423213218032"></p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220423213233636.png" alt="image-20220423213233636"></p>
-<p>那么v4=4也出来了，开始写脚本</p>
-<h5 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">char</span> a[]=&#123;<span class="number">0x0D</span>, <span class="number">0x26</span>, <span class="number">0x49</span>, <span class="number">0x45</span>, <span class="number">0x2A</span>, <span class="number">0x17</span>, <span class="number">0x78</span>, <span class="number">0x44</span>, <span class="number">0x2B</span>, <span class="number">0x6C</span>, </span><br><span class="line">  			  <span class="number">0x5D</span>, <span class="number">0x5E</span>, <span class="number">0x45</span>, <span class="number">0x12</span>, <span class="number">0x2F</span>, <span class="number">0x17</span>, <span class="number">0x2B</span>, <span class="number">0x44</span>, <span class="number">0x6F</span>, <span class="number">0x6E</span>, </span><br><span class="line">  			  <span class="number">0x56</span>, <span class="number">0x09</span>, <span class="number">0x5F</span>, <span class="number">0x45</span>, <span class="number">0x47</span>, <span class="number">0x73</span>, <span class="number">0x26</span>, <span class="number">0x0A</span>, <span class="number">0x0D</span>, <span class="number">0x13</span>, </span><br><span class="line">    	  	  <span class="number">0x17</span>, <span class="number">0x48</span>, <span class="number">0x42</span>, <span class="number">0x01</span>, <span class="number">0x40</span>, <span class="number">0x4D</span>, <span class="number">0x0C</span>, <span class="number">0x02</span>, <span class="number">0x69</span>&#125;;</span><br><span class="line">    <span class="type">int</span> b=<span class="built_in">strlen</span>(a);</span><br><span class="line">    <span class="type">int</span> v4=<span class="number">4</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=b<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i]=a[i]^v4;</span><br><span class="line">		v4=a[i];		</span><br><span class="line">	&#125;	  	  </span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后得到flag</p>
+<p>那么 v4=4 也出来了，开始写脚本</p>
+<h5 id="脚本"><a class="markdownIt-Anchor" href="#脚本">#</a> 脚本</h5>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">char</span> a[]=&#123;<span class="number">0x0D</span>, <span class="number">0x26</span>, <span class="number">0x49</span>, <span class="number">0x45</span>, <span class="number">0x2A</span>, <span class="number">0x17</span>, <span class="number">0x78</span>, <span class="number">0x44</span>, <span class="number">0x2B</span>, <span class="number">0x6C</span>, </span><br><span class="line">  			  <span class="number">0x5D</span>, <span class="number">0x5E</span>, <span class="number">0x45</span>, <span class="number">0x12</span>, <span class="number">0x2F</span>, <span class="number">0x17</span>, <span class="number">0x2B</span>, <span class="number">0x44</span>, <span class="number">0x6F</span>, <span class="number">0x6E</span>, </span><br><span class="line">  			  <span class="number">0x56</span>, <span class="number">0x09</span>, <span class="number">0x5F</span>, <span class="number">0x45</span>, <span class="number">0x47</span>, <span class="number">0x73</span>, <span class="number">0x26</span>, <span class="number">0x0A</span>, <span class="number">0x0D</span>, <span class="number">0x13</span>, </span><br><span class="line">    	  	  <span class="number">0x17</span>, <span class="number">0x48</span>, <span class="number">0x42</span>, <span class="number">0x01</span>, <span class="number">0x40</span>, <span class="number">0x4D</span>, <span class="number">0x0C</span>, <span class="number">0x02</span>, <span class="number">0x69</span>&#125;;</span><br><span class="line">    <span class="type">int</span> b=<span class="built_in">strlen</span>(a);</span><br><span class="line">    <span class="type">int</span> v4=<span class="number">4</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=b<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i]=a[i]^v4;</span><br><span class="line">		v4=a[i];		</span><br><span class="line">	&#125;	  	  </span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后得到 flag</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R_y0u_H0t_3n0ugH_t0_1gn1t3@flare-on.com</span><br></pre></td></tr></table></figure>
-
-<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>这题就是简单的异或，主要是需要用到IDA的动态调试去找初始值v4</p>
+<h5 id="总结"><a class="markdownIt-Anchor" href="#总结">#</a> 总结</h5>
+<p>这题就是简单的异或，主要是需要用到 IDA 的动态调试去找初始值 v4</p>
 
       <div class="tags">
           <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
@@ -192,7 +194,7 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-04-23 21:37:04" itemprop="dateModified" datetime="2022-04-23T21:37:04+08:00">2022-04-23</time>
+    <time title="修改时间：2022-04-29 21:09:01" itemprop="dateModified" datetime="2022-04-29T21:09:01+08:00">2022-04-29</time>
   </span>
 </div>
 
@@ -224,7 +226,7 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
     <div class="item left">
       
 
-  <a href="/2022/04/19/11/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciukx8a7j20zk0m8aio.jpg" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">
+  <a href="/2022/04/19/11/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeu1usa7j20zk0m8b29.jpg" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Re</span>
   <h3>关于base64换表及交叉引用BUU[WUSTCTF2020]level3</h3>
@@ -234,7 +236,7 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
     <div class="item right">
       
 
-  <a href="/2022/04/24/13/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclil3m4ej20zk0m8tn8.jpg" title="BUU[FlareOn6]Overlong">
+  <a href="/2022/04/24/13/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipevuctzzj20zk0m84qp.jpg" title="BUU[FlareOn6]Overlong">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Re</span>
   <h3>BUU[FlareOn6]Overlong</h3>
@@ -256,7 +258,7 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#BUU-FlareOn4-IgniteMe"><span class="toc-number">1.</span> <span class="toc-text">BUU[FlareOn4]IgniteMe</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-number">1.2.</span> <span class="toc-text">脚本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#buuflareon4igniteme"><span class="toc-number">1.</span> <span class="toc-text"> BUU[FlareOn4]IgniteMe</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text"> 分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-number">1.2.</span> <span class="toc-text"> 脚本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text"> 总结</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -380,55 +382,7 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/04/2/" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
-</div>
-
-    <span><a href="/2022/04/08/7/" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/04/06/6/" title="BUUCTF xxor">BUUCTF xxor</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/04/25/15/" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/04/24/13/" title="BUU[FlareOn6]Overlong">BUU[FlareOn6]Overlong</a></span>
+    <span><a href="/2022/03/28/1/" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></span>
   </li>
 
       
@@ -452,7 +406,7 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/05/4/" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></span>
+    <span><a href="/2022/04/25/15/" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></span>
   </li>
 
       
@@ -464,7 +418,55 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
 <a href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="分类于 加密算法">加密算法</a>
 </div>
 
-    <span><a href="/2022/04/05/3/" title="TEA">TEA</a></span>
+    <span><a href="/2022/04/05/5/" title="RC4">RC4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/06/6/" title="BUUCTF xxor">BUUCTF xxor</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/23/12/" title="BUU[FlareOn4]IgniteMe">BUU[FlareOn4]IgniteMe</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/27/17/" title="BUU[WUSTCTF2020]level4">BUU[WUSTCTF2020]level4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/17/10/" title="恒月杯18年9月NewDriver">恒月杯18年9月NewDriver</a></span>
   </li>
 
       
@@ -485,10 +487,10 @@ BUU[FlareOn4]IgniteMe - Re - CTF |
 <div class="breadcrumb">
 <a href="/categories/CTF/" title="分类于 CTF">CTF</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="分类于 加密算法">加密算法</a>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/05/5/" title="RC4">RC4</a></span>
+    <span><a href="/2022/04/05/4/" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></span>
   </li>
 
   </ul>
