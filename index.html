@@ -89,12 +89,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclil3m4ej20zk0m8tn8.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipev1x5e4j20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipey84bjtj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://images6.alphacoders.com/106/thumbbig-1069584.webp"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg"></li>
         </ul>
       </div>
     </header>
@@ -121,7 +121,50 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/05/07/18/" itemprop="url" title="网鼎杯2020青龙组 singal"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gicljgocqbj20zk0m8e81.jpg"></a>
+    <a href="/2022/05/08/19/" itemprop="url" title="BUU--findKey"><img data-src="https://tva4.sinaimg.cn/mw690/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2022-05-08 17:06:01">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2022-05-08T17:06:01+08:00">2022-05-08</time>
+  </span>
+</div>
+
+    <h3><a href="/2022/05/08/19/" itemprop="url" title="BUU--findKey">BUU--findKey</a></h3>
+    <div class="excerpt">
+        # BUU–findKey
+# 分析
+首先查壳，发现是 32 位无壳的，然后放入 IDA 中看看，直接 shift+12 去找关键点
+
+对它进行交叉引用，去看看这个程序要干嘛
+
+这里发现，它这里有两个一样的语句，直接 nop 掉一句，再声明一下就可以反汇编了
+整个看起来很复杂，但是有用的也就那几个
+
+简单分析之后可以知道有用的部分只有 sub_40101E 函数和 sub_401005 这两个函数，其中 sub_401005 这个函数用了两次，首先去 sub_40101E 函数看看它在干嘛
+
+再结合函数库
+
+能明白这里是一个哈希加密的东西。
+然后去 sub_401005...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/CTF/Re/" itemprop="url" title="Re"><i class="ic i-flag"></i>Re</a>
+      </span>
+    </div>
+    <a href="/2022/05/08/19/" itemprop="url" title="BUU--findKey" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2022/05/07/18/" itemprop="url" title="网鼎杯2020青龙组 singal"><img data-src="https://tva4.sinaimg.cn/mw690/6833939bly1giciusoyjnj219g0u0x56.jpg"></a>
   </div>
   <div class="info">
     
@@ -162,7 +205,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/27/17/" itemprop="url" title="BUU[WUSTCTF2020]level4"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giph4fomxoj20zk0m8axp.jpg"></a>
+    <a href="/2022/04/27/17/" itemprop="url" title="BUU[WUSTCTF2020]level4"><img data-src="https://tva4.sinaimg.cn/mw690/6833939bly1gipeyonbf9j20zk0m8e81.jpg"></a>
   </div>
   <div class="info">
     
@@ -201,7 +244,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/26/16/" itemprop="url" title="美团CTF2021 高校安全挑战赛 Random"><img data-src="https://images6.alphacoders.com/114/thumbbig-1144163.webp"></a>
+    <a href="/2022/04/26/16/" itemprop="url" title="美团CTF2021 高校安全挑战赛 Random"><img data-src="https://tva4.sinaimg.cn/mw690/6833939bly1gipetfk5zwj20zk0m8e81.jpg"></a>
   </div>
   <div class="info">
     
@@ -232,7 +275,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/25/15/" itemprop="url" title="BUU[Zer0pts2020]easy strcmp"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giciundwu5j20zk0m8n9e.jpg"></a>
+    <a href="/2022/04/25/15/" itemprop="url" title="BUU[Zer0pts2020]easy strcmp"><img data-src="https://tva4.sinaimg.cn/mw690/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></a>
   </div>
   <div class="info">
     
@@ -273,7 +316,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/25/14/" itemprop="url" title="BUU[ACTF新生赛2020]Oruga"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclgrvbd6j20zk0m8qv5.jpg"></a>
+    <a href="/2022/04/25/14/" itemprop="url" title="BUU[ACTF新生赛2020]Oruga"><img data-src="https://tva4.sinaimg.cn/mw690/6833939bly1gipey0a334j20zk0m8qpt.jpg"></a>
   </div>
   <div class="info">
     
@@ -311,7 +354,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/24/13/" itemprop="url" title="BUU[FlareOn6]Overlong"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclxp31goj20zk0m8qv5.jpg"></a>
+    <a href="/2022/04/24/13/" itemprop="url" title="BUU[FlareOn6]Overlong"><img data-src="https://images6.alphacoders.com/114/thumbbig-1144163.webp"></a>
   </div>
   <div class="info">
     
@@ -359,7 +402,7 @@ MessageBoxA 看见之后就想到了 OD，之前做 creakeme 的消息盒
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/23/12/" itemprop="url" title="BUU[FlareOn4]IgniteMe"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gipeyonbf9j20zk0m8e81.jpg"></a>
+    <a href="/2022/04/23/12/" itemprop="url" title="BUU[FlareOn4]IgniteMe"><img data-src="https://tva4.sinaimg.cn/large/0073WLvOgy1gp28jxpee1j30qo0f07bw.jpg"></a>
   </div>
   <div class="info">
     
@@ -402,7 +445,7 @@ MessageBoxA 看见之后就想到了 OD，之前做 creakeme 的消息盒
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/19/11/" itemprop="url" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclj9410cj20zk0m8h12.jpg"></a>
+    <a href="/2022/04/19/11/" itemprop="url" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3"><img data-src="https://tva4.sinaimg.cn/mw690/6833939bly1gipeun65urj20zk0m81ii.jpg"></a>
   </div>
   <div class="info">
     
@@ -444,7 +487,7 @@ MessageBoxA 看见之后就想到了 OD，之前做 creakeme 的消息盒
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/17/10/" itemprop="url" title="恒月杯18年9月NewDriver"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gicli9lfebj20zk0m84qp.jpg"></a>
+    <a href="/2022/04/17/10/" itemprop="url" title="恒月杯18年9月NewDriver"><img data-src="https://tva4.sinaimg.cn/mw690/6833939bly1giph4fomxoj20zk0m8axp.jpg"></a>
   </div>
   <div class="info">
     
@@ -486,41 +529,6 @@ MessageBoxA 看见之后就想到了 OD，之前做 creakeme 的消息盒
   </div>
 </article>
 
-        
-<article class="item">
-  <div class="cover">
-    <a href="/2022/04/15/9/" itemprop="url" title="2020华南师大CTF新生赛maze"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclx29mstj20zk0m8hdt.jpg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="创建时间：2022-04-15 19:28:46">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-04-15T19:28:46+08:00">2022-04-15</time>
-  </span>
-</div>
-
-    <h3><a href="/2022/04/15/9/" itemprop="url" title="2020华南师大CTF新生赛maze">2020华南师大CTF新生赛maze</a></h3>
-    <div class="excerpt">
-        2020华南师大CTF新生赛maze分析首先查壳
-发现这是没有壳32位的，然后把它方如ida去分析
-
-很容易知道这个是找最短路径的迷宫，于是我们去CreateMap()这个函数去看看这个迷宫是怎样的
-
-我一开始不知道v2&amp;amp;1然后再v2&amp;gt;&amp;gt;=1是干嘛的，然后去问了一下一个CAS的朋友，才知道这个v2&amp;amp;1是奇数就是它本身，如果不是奇数就是0。这个v2&amp;gt;&amp;gt;=1是除2，向下取整数的意思，判断这个位置是不是1。这里大致就是将num的元素都转换位2进制的意思
-那么下一步就是找到所有的v2然后将其转换成16*16的表，这...
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" itemprop="url" title="游戏题"><i class="ic i-flag"></i>游戏题</a>
-      </span>
-    </div>
-    <a href="/2022/04/15/9/" itemprop="url" title="2020华南师大CTF新生赛maze" class="btn">more...</a>
-  </div>
-</article>
-
     </div>
 
   </div>
@@ -556,7 +564,7 @@ MessageBoxA 看见之后就想到了 OD，之前做 creakeme 的消息盒
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">19</span>
+        <span class="count">20</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -660,19 +668,7 @@ MessageBoxA 看见之后就想到了 OD，之前做 creakeme 的消息盒
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/26/16/" title="美团CTF2021 高校安全挑战赛 Random">美团CTF2021 高校安全挑战赛 Random</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/04/19/11/" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">关于base64换表及交叉引用BUU[WUSTCTF2020]level3</a></span>
+    <span><a href="/2022/04/24/13/" title="BUU[FlareOn6]Overlong">BUU[FlareOn6]Overlong</a></span>
   </li>
 
       
@@ -685,6 +681,54 @@ MessageBoxA 看见之后就想到了 OD，之前做 creakeme 的消息盒
 </div>
 
     <span><a href="/2022/04/05/3/" title="TEA">TEA</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/06/6/" title="BUUCTF xxor">BUUCTF xxor</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/26/16/" title="美团CTF2021 高校安全挑战赛 Random">美团CTF2021 高校安全挑战赛 Random</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
+</div>
+
+    <span><a href="/2022/04/15/9/" title="2020华南师大CTF新生赛maze">2020华南师大CTF新生赛maze</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/17/10/" title="恒月杯18年9月NewDriver">恒月杯18年9月NewDriver</a></span>
   </li>
 
       
@@ -720,7 +764,7 @@ MessageBoxA 看见之后就想到了 OD，之前做 creakeme 的消息盒
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/06/6/" title="BUUCTF xxor">BUUCTF xxor</a></span>
+    <span><a href="/2022/05/07/18/" title="网鼎杯2020青龙组 singal">网鼎杯2020青龙组 singal</a></span>
   </li>
 
       
@@ -732,43 +776,7 @@ MessageBoxA 看见之后就想到了 OD，之前做 creakeme 的消息盒
 <a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
 </div>
 
-    <span><a href="/2022/04/25/14/" title="BUU[ACTF新生赛2020]Oruga">BUU[ACTF新生赛2020]Oruga</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/04/27/17/" title="BUU[WUSTCTF2020]level4">BUU[WUSTCTF2020]level4</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/04/23/12/" title="BUU[FlareOn4]IgniteMe">BUU[FlareOn4]IgniteMe</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
-</div>
-
-    <span><a href="/2022/04/08/7/" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a></span>
+    <span><a href="/2022/04/10/8/" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a></span>
   </li>
 
   </ul>
