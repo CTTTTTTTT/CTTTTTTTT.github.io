@@ -27,12 +27,12 @@
   <meta name="keywords" content="CTF" />
 
 
-<link rel="canonical" href="https://ctttttttt.github.io/2022/04/05/4/">
+<link rel="canonical" href="https://ctttttttt.github.io/2022/06/27/21/">
 
 
 
   <title>
-题解HGAME2022 creakme - Re - CTF |
+BUU[羊城杯 2020]easyre - Re - CTF |
 (o゜▽゜)o☆[BINGO!] = 逆向上分之路 = Tuyt的Blog</title>
 <meta name="generator" content="Hexo 5.4.1"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,16 +60,16 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">题解HGAME2022 creakme
+  <h1 itemprop="name headline">BUU[羊城杯 2020]easyre
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2022-04-05 16:44:01">
+  <span class="item" title="创建时间：2022-06-27 16:47:17">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2022-04-05T16:44:01+08:00">2022-04-05</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-06-27T16:47:17+08:00">2022-06-27</time>
   </span>
 </div>
 
@@ -102,12 +102,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://images6.alphacoders.com/106/thumbbig-1069584.webp"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclimtf7dj20zk0m8qav.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeubcbajj20zk0m8h1h.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicliwyw55j20zk0m8hdt.jpg"></li>
         </ul>
       </div>
     </header>
@@ -141,7 +141,7 @@
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://ctttttttt.github.io/2022/04/05/4/">
+  <link itemprop="mainEntityOfPage" href="https://ctttttttt.github.io/2022/06/27/21/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/head.jpg">
@@ -156,26 +156,26 @@
   <div class="body md" itemprop="articleBody">
     
 
-    <p>链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMV9CSFZtT2VqX29JVDNrcDVBOFp1OVE=">https://pan.baidu.com/s/1_BHVmOej_oIT3kp5A8Zu9Q</span><br>
- 提取码：tuyt</p>
-<h4 id="题解hgame2022-creakme"><a class="markdownIt-Anchor" href="#题解hgame2022-creakme">#</a> 题解 HGAME2022 creakme</h4>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220405164603007.png" alt="image-20220405164603007"></p>
-<p>发现这种格式，就想起 tea 加密，但是很容易发现，这里的 sum 值改了，而且在 v0 和 v1 这里多加了一个异或，得知这是一个魔改的 tea</p>
-<p>做 tea 的题目我们需要去寻找 key 和明文</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220405164658645.png" alt="image-20220405164658645"></p>
-<p>这里的 while 语句就知道我们的明文是跟这个 v11 (这里是拿输入的东西与 v11+sum 进行比较如果一样就是正确的) 有关的于是我们去看 v11 是什么</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220405164753479.png" alt="image-20220405164753479"></p>
-<p>发现是这个，明文找到了，但还要确定这个明文是怎样进去 tea 解密的循环的</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220405164904857.png" alt="image-20220405164904857"></p>
-<p>我们可以从这里发现它这是是相当于 v0 为前四个字节，v1 为后四个字节进行输入，然后循环了四次 (i=v8+8），然后我们就知道 v [8]={0X48D93488,0X030C144C,0X52EB78C2,0XED9CE5ED,0XAE1FEDE6,0XBA5A126D,0XCF9284AA,0X65E0F2E3}（两组两组一取，总共分成了八个小段，因为这个 v0 和 v1 是 char 类型四个字节，先从后面取，按顺序！）</p>
-<p>然后我们去找密匙 key，</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220405165015779.png" alt="image-20220405165015779"></p>
-<p>因为 tea 加密的原理，我们只需要取四组为 key 就行所以 key 为 k [4]={0X44434241,0X48474645,0X4C4B4A49,0X504F4E4D}（key 长度为 128 位）</p>
-<p>然后我们开始写写脚本</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220405165118499.png" alt="image-20220405165118499"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">decrypt</span> <span class="params">(<span class="type">uint32_t</span>* v, <span class="type">uint32_t</span>* k)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">uint32_t</span> delta=<span class="number">0x12345678</span>;</span><br><span class="line">	<span class="type">uint32_t</span> v0=v[<span class="number">0</span>], v1=v[<span class="number">1</span>], sum=delta&lt;&lt;<span class="number">5</span>, i;</span><br><span class="line">	<span class="type">uint32_t</span> k0=k[<span class="number">0</span>], k1=k[<span class="number">1</span>], k2=k[<span class="number">2</span>], k3=k[<span class="number">3</span>];</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;<span class="number">32</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		v1 -= sum^((v0&lt;&lt;<span class="number">4</span>) + k0) ^ (v0 + sum) ^ ((v0&gt;&gt;<span class="number">5</span>) + k1);</span><br><span class="line">		v0 -= sum^((v1&lt;&lt;<span class="number">4</span>) + k2) ^ (v1 + sum) ^ ((v1&gt;&gt;<span class="number">5</span>) + k3);</span><br><span class="line">		sum -= delta;</span><br><span class="line">	&#125;</span><br><span class="line">	v[<span class="number">0</span>]=v0; v[<span class="number">1</span>]=v1; </span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">uint32_t</span> v[<span class="number">8</span>]=&#123;<span class="number">0X48D93488</span>,<span class="number">0X030C144C</span>,<span class="number">0X52EB78C2</span>,<span class="number">0XED9CE5ED</span>,<span class="number">0XAE1FEDE6</span>,<span class="number">0XBA5A126D</span>,<span class="number">0XCF9284AA</span>,<span class="number">0X65E0F2E3</span>&#125;, k[<span class="number">4</span>]=&#123;<span class="number">0X44434241</span>,<span class="number">0X48474645</span>,<span class="number">0X4C4B4A49</span>,<span class="number">0X504F4E4D</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i+=<span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		decrypt(v+i,k);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,v);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>得到 flag：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hgame&#123;H4ppy_v4c4ti0n!&#125;</span><br></pre></td></tr></table></figure>
+    <h2 id="buu羊城杯-2020easyre"><a class="markdownIt-Anchor" href="#buu羊城杯-2020easyre">#</a> BUU [羊城杯 2020] easyre</h2>
+<h3 id="分析"><a class="markdownIt-Anchor" href="#分析">#</a> 分析</h3>
+<p>首先查壳，发现是无壳 64 位的，放入对应的 IDA 分析</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220627164839521.png" alt="image-20220627164839521"></p>
+<p>可以看到，这里是只有那个 if 语句不成立才能得到到 flag，于是去看一下那三个 encode 函数</p>
+<h4 id="第一个encode"><a class="markdownIt-Anchor" href="#第一个encode">#</a> 第一个 encode</h4>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220627165127302.png" alt="image-20220627165127302"></p>
+<p>这里看到这些地方，猜测是 base64，于是去一下 alphabet 函数看一下码表</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220627165217274.png" alt="image-20220627165217274"></p>
+<p>就是普通的 base64</p>
+<h4 id="第二个encode"><a class="markdownIt-Anchor" href="#第二个encode">#</a> 第二个 encode</h4>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220627165243442.png" alt="image-20220627165243442"></p>
+<p>发现是将编码后的字符串以 13 个一组的换位置</p>
+<h4 id="第三个encode"><a class="markdownIt-Anchor" href="#第三个encode">#</a> 第三个 encode</h4>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220627165625393.png" alt="image-20220627165625393"></p>
+<p>这里看到先减去 48 (0) 97 (a) 65 (A) 再位移三位然后除于再加到原来的大小写，很容易得出这是移三位的凯撒密码</p>
+<h3 id="脚本"><a class="markdownIt-Anchor" href="#脚本">#</a> 脚本</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">data=<span class="string">&#x27;EmBmP5Pmn7QcPU4gLYKv5QcMmB3PWHcP5YkPq3=cT6QckkPckoRG&#x27;</span></span><br><span class="line">data1=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> data:<span class="comment">#凯撒密码部分解密</span></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">ord</span>(i)&gt;=<span class="number">48</span> <span class="keyword">and</span> <span class="built_in">ord</span>(i)&lt;=<span class="number">57</span>:</span><br><span class="line">		data1 += <span class="built_in">chr</span>((<span class="built_in">ord</span>(i)-<span class="number">3</span>-<span class="number">48</span>)%<span class="number">10</span>+<span class="number">48</span>)</span><br><span class="line">	<span class="keyword">elif</span> <span class="built_in">ord</span>(i)&gt;=<span class="number">65</span> <span class="keyword">and</span> <span class="built_in">ord</span>(i)&lt;=<span class="number">90</span>:</span><br><span class="line">		data1 += <span class="built_in">chr</span>((<span class="built_in">ord</span>(i)-<span class="number">3</span>-<span class="number">65</span>)%<span class="number">26</span>+<span class="number">65</span>)</span><br><span class="line">	<span class="keyword">elif</span> <span class="built_in">ord</span>(i)&gt;=<span class="number">97</span> <span class="keyword">and</span> <span class="built_in">ord</span>(i)&lt;=<span class="number">122</span>:</span><br><span class="line">		data1 += <span class="built_in">chr</span>((<span class="built_in">ord</span>(i)-<span class="number">3</span>-<span class="number">97</span>)%<span class="number">26</span>+<span class="number">97</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		data1 += i</span><br><span class="line">flag = data1[<span class="number">13</span>:<span class="number">26</span>] + data1[<span class="number">39</span>:] + data1[:<span class="number">13</span>] + data1[<span class="number">26</span>:<span class="number">39</span>]<span class="comment">#凯撒解码后的换位置</span></span><br><span class="line"><span class="built_in">print</span>(base64.b64decode(flag))<span class="comment">#base64解密</span></span><br><span class="line"><span class="comment">#GWHT&#123;672cc4778a38e80cb362987341133ea2&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结">#</a> 总结</h3>
+<p>要善于发现每个函数的特征部分，发现是什么加密原理，便于解密。还要加油锻炼自己写脚本的能力我的能力还是不太行 /(ㄒ o ㄒ)/~~</p>
 
       <div class="tags">
           <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
@@ -190,7 +190,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-04-08 12:28:36" itemprop="dateModified" datetime="2022-04-08T12:28:36+08:00">2022-04-08</time>
+    <time title="修改时间：2022-06-27 17:29:05" itemprop="dateModified" datetime="2022-06-27T17:29:05+08:00">2022-06-27</time>
   </span>
 </div>
 
@@ -203,7 +203,7 @@
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://ctttttttt.github.io/2022/04/05/4/" title="题解HGAME2022 creakme">https://ctttttttt.github.io/2022/04/05/4/</a>
+    <a href="https://ctttttttt.github.io/2022/06/27/21/" title="BUU[羊城杯 2020]easyre">https://ctttttttt.github.io/2022/06/27/21/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -222,22 +222,14 @@
     <div class="item left">
       
 
-  <a href="/2022/04/05/3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexe4oykj20zk0m87ji.jpg" title="TEA">
+  <a href="/2022/05/16/20/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclxfdlttj20zk0m8npd.jpg" title="ACTF新生赛2020 easyre">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> 加密算法</span>
-  <h3>TEA</h3>
+  <span class="category"><i class="ic i-flag"></i> Re</span>
+  <h3>ACTF新生赛2020 easyre</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/2022/04/05/5/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipetv6p75j20zk0m8x6p.jpg" title="RC4">
-  <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> 加密算法</span>
-  <h3>RC4</h3>
-  </a>
-
     </div>
 </div>
 
@@ -254,11 +246,11 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3hgame2022-creakme"><span class="toc-number">1.</span> <span class="toc-text"> 题解 HGAME2022 creakme</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#buu%E7%BE%8A%E5%9F%8E%E6%9D%AF-2020easyre"><span class="toc-number">1.</span> <span class="toc-text"> BUU [羊城杯 2020] easyre</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text"> 分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AAencode"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 第一个 encode</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E4%B8%AAencode"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 第二个 encode</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E4%B8%AAencode"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 第三个 encode</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-number">1.2.</span> <span class="toc-text"> 脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text"> 总结</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2022/03/28/123-1/" rel="bookmark" title="easyre题解">easyre题解</a></li><li><a href="/2022/03/28/1/" rel="bookmark" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></li><li><a href="/2022/04/04/2/" rel="bookmark" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></li><li class="active"><a href="/2022/04/05/4/" rel="bookmark" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></li><li><a href="/2022/04/06/6/" rel="bookmark" title="BUUCTF xxor">BUUCTF xxor</a></li><li><a href="/2022/04/17/10/" rel="bookmark" title="恒月杯18年9月NewDriver">恒月杯18年9月NewDriver</a></li><li><a href="/2022/04/19/11/" rel="bookmark" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">关于base64换表及交叉引用BUU[WUSTCTF2020]level3</a></li><li><a href="/2022/04/23/12/" rel="bookmark" title="BUU[FlareOn4]IgniteMe">BUU[FlareOn4]IgniteMe</a></li><li><a href="/2022/04/24/13/" rel="bookmark" title="BUU[FlareOn6]Overlong">BUU[FlareOn6]Overlong</a></li><li><a href="/2022/04/25/15/" rel="bookmark" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></li><li><a href="/2022/04/26/16/" rel="bookmark" title="美团CTF2021 高校安全挑战赛 Random">美团CTF2021 高校安全挑战赛 Random</a></li><li><a href="/2022/04/27/17/" rel="bookmark" title="BUU[WUSTCTF2020]level4">BUU[WUSTCTF2020]level4</a></li><li><a href="/2022/05/07/18/" rel="bookmark" title="网鼎杯2020青龙组 singal">网鼎杯2020青龙组 singal</a></li><li><a href="/2022/05/08/19/" rel="bookmark" title="BUU--findKey">BUU--findKey</a></li><li><a href="/2022/05/16/20/" rel="bookmark" title="ACTF新生赛2020 easyre">ACTF新生赛2020 easyre</a></li><li><a href="/2022/06/27/21/" rel="bookmark" title="BUU[羊城杯 2020]easyre">BUU[羊城杯 2020]easyre</a></li>
+          <li><a href="/2022/03/28/123-1/" rel="bookmark" title="easyre题解">easyre题解</a></li><li><a href="/2022/03/28/1/" rel="bookmark" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></li><li><a href="/2022/04/04/2/" rel="bookmark" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></li><li><a href="/2022/04/05/4/" rel="bookmark" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></li><li><a href="/2022/04/06/6/" rel="bookmark" title="BUUCTF xxor">BUUCTF xxor</a></li><li><a href="/2022/04/17/10/" rel="bookmark" title="恒月杯18年9月NewDriver">恒月杯18年9月NewDriver</a></li><li><a href="/2022/04/19/11/" rel="bookmark" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">关于base64换表及交叉引用BUU[WUSTCTF2020]level3</a></li><li><a href="/2022/04/23/12/" rel="bookmark" title="BUU[FlareOn4]IgniteMe">BUU[FlareOn4]IgniteMe</a></li><li><a href="/2022/04/24/13/" rel="bookmark" title="BUU[FlareOn6]Overlong">BUU[FlareOn6]Overlong</a></li><li><a href="/2022/04/25/15/" rel="bookmark" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></li><li><a href="/2022/04/26/16/" rel="bookmark" title="美团CTF2021 高校安全挑战赛 Random">美团CTF2021 高校安全挑战赛 Random</a></li><li><a href="/2022/04/27/17/" rel="bookmark" title="BUU[WUSTCTF2020]level4">BUU[WUSTCTF2020]level4</a></li><li><a href="/2022/05/07/18/" rel="bookmark" title="网鼎杯2020青龙组 singal">网鼎杯2020青龙组 singal</a></li><li><a href="/2022/05/08/19/" rel="bookmark" title="BUU--findKey">BUU--findKey</a></li><li><a href="/2022/05/16/20/" rel="bookmark" title="ACTF新生赛2020 easyre">ACTF新生赛2020 easyre</a></li><li class="active"><a href="/2022/06/27/21/" rel="bookmark" title="BUU[羊城杯 2020]easyre">BUU[羊城杯 2020]easyre</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -346,12 +338,10 @@
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2022/04/05/3/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2022/04/05/5/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -378,79 +368,7 @@
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/03/28/1/" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/04/26/16/" title="美团CTF2021 高校安全挑战赛 Random">美团CTF2021 高校安全挑战赛 Random</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/04/23/12/" title="BUU[FlareOn4]IgniteMe">BUU[FlareOn4]IgniteMe</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/05/16/20/" title="ACTF新生赛2020 easyre">ACTF新生赛2020 easyre</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
-</div>
-
-    <span><a href="/2022/04/08/7/" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/04/06/6/" title="BUUCTF xxor">BUUCTF xxor</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/04/05/4/" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></span>
+    <span><a href="/2022/04/04/2/" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></span>
   </li>
 
       
@@ -474,7 +392,7 @@
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/17/10/" title="恒月杯18年9月NewDriver">恒月杯18年9月NewDriver</a></span>
+    <span><a href="/2022/04/19/11/" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">关于base64换表及交叉引用BUU[WUSTCTF2020]level3</a></span>
   </li>
 
       
@@ -486,7 +404,79 @@
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/05/07/18/" title="网鼎杯2020青龙组 singal">网鼎杯2020青龙组 singal</a></span>
+    <span><a href="/2022/04/06/6/" title="BUUCTF xxor">BUUCTF xxor</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
+</div>
+
+    <span><a href="/2022/04/08/7/" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
+</div>
+
+    <span><a href="/2022/04/10/8/" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/24/13/" title="BUU[FlareOn6]Overlong">BUU[FlareOn6]Overlong</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/05/4/" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/05/16/20/" title="ACTF新生赛2020 easyre">ACTF新生赛2020 easyre</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/17/10/" title="恒月杯18年9月NewDriver">恒月杯18年9月NewDriver</a></span>
   </li>
 
   </ul>
@@ -517,7 +507,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2022/04/05/4/',
+    path: '2022/06/27/21/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
