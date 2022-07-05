@@ -89,12 +89,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipet8c1a2j20zk0m8kct.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeu1usa7j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipetfk5zwj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexbei4hj20zk0m8npd.jpg"></li>
         </ul>
       </div>
     </header>
@@ -120,7 +120,52 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/08/7/" itemprop="url" title="2019华南师大CTF新生赛maze"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gipeubcbajj20zk0m8h1h.jpg"></a>
+    <a href="/2022/04/10/8/" itemprop="url" title="BUU[HDCTF2019]Maze"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gipesx5fdwj20zk0m81kx.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2022-04-10 16:20:16">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-10T16:20:16+08:00">2022-04-10</time>
+  </span>
+</div>
+
+    <h3><a href="/2022/04/10/8/" itemprop="url" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a></h3>
+    <div class="excerpt">
+        BUU[HDCTF2019]Maze分析首先查壳发现是upx的壳，然后去壳后放进IDA
+
+发现这里有报红，可以推测这里是有花指令使它出现错误的干扰
+
+这里的0E8h是对应的call，很显然是个垃圾数据
+我们先把unk_40102F这一部分转换成有效代码（按C）
+然后得到
+
+这是有效代码了，jnz也正常了，但是我们还是不可以F5，然后我们去上面的主函数部分，声明（按P）一下主函数
+
+然后得到了可F5的函数
+
+F5进去之后，看到’a’,’w’,’d’,’s’能很容易推断出这是一个迷宫题
+
+然后我们看到这两个数据，判断出最开始的初始位置（0,7）
+
+解决方法然后我们shift+12去看看迷宫长什么样...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" itemprop="url" title="游戏题"><i class="ic i-flag"></i>游戏题</a>
+      </span>
+    </div>
+    <a href="/2022/04/10/8/" itemprop="url" title="BUU[HDCTF2019]Maze" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2022/04/08/7/" itemprop="url" title="2019华南师大CTF新生赛maze"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giciub8ja1j20zk0m81ky.jpg"></a>
   </div>
   <div class="info">
     
@@ -162,7 +207,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/06/6/" itemprop="url" title="BUUCTF xxor"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></a>
+    <a href="/2022/04/06/6/" itemprop="url" title="BUUCTF xxor"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gicli9lfebj20zk0m84qp.jpg"></a>
   </div>
   <div class="info">
     
@@ -201,7 +246,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/05/5/" itemprop="url" title="RC4"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giciukx8a7j20zk0m8aio.jpg"></a>
+    <a href="/2022/04/05/5/" itemprop="url" title="RC4"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclxfdlttj20zk0m8npd.jpg"></a>
   </div>
   <div class="info">
     
@@ -232,7 +277,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/05/4/" itemprop="url" title="题解HGAME2022 creakme"><img data-src="https://images.alphacoders.com/111/thumbbig-1113492.webp"></a>
+    <a href="/2022/04/05/4/" itemprop="url" title="题解HGAME2022 creakme"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></a>
   </div>
   <div class="info">
     
@@ -270,7 +315,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/05/3/" itemprop="url" title="TEA"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gicit4jrvuj20zk0m8785.jpg"></a>
+    <a href="/2022/04/05/3/" itemprop="url" title="TEA"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></a>
   </div>
   <div class="info">
     
@@ -308,7 +353,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/04/04/2/" itemprop="url" title="BUU--BabyAlgorithm"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gipexoj0moj20zk0m8kgu.jpg"></a>
+    <a href="/2022/04/04/2/" itemprop="url" title="BUU--BabyAlgorithm"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gipewr8iypj20zk0m8b29.jpg"></a>
   </div>
   <div class="info">
     
@@ -350,7 +395,7 @@ flag 也就是密文去异或密匙流得到的明文
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/03/28/123-1/" itemprop="url" title="easyre题解"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></a>
+    <a href="/2022/03/28/123-1/" itemprop="url" title="easyre题解"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giciusoyjnj219g0u0x56.jpg"></a>
   </div>
   <div class="info">
     
@@ -383,7 +428,7 @@ flag 也就是密文去异或密匙流得到的明文
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/03/28/1/" itemprop="url" title="2022DASCTF X SU 三月春季挑战赛   easyre题解"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></a>
+    <a href="/2022/03/28/1/" itemprop="url" title="2022DASCTF X SU 三月春季挑战赛   easyre题解"><img data-src="https://images6.alphacoders.com/114/thumbbig-1144163.webp"></a>
   </div>
   <div class="info">
     
@@ -459,7 +504,7 @@ sub_40152B ()...
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">28</span>
+        <span class="count">29</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -575,6 +620,18 @@ sub_40152B ()...
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
+    <span><a href="/2022/06/30/23/" title="BUU[CFI-CTF 2018]IntroToPE">BUU[CFI-CTF 2018]IntroToPE</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
     <span><a href="/2022/05/07/18/" title="网鼎杯2020青龙组 singal">网鼎杯2020青龙组 singal</a></span>
   </li>
 
@@ -587,19 +644,7 @@ sub_40152B ()...
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/03/28/123-1/" title="easyre题解">easyre题解</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/04/17/10/" title="恒月杯18年9月NewDriver">恒月杯18年9月NewDriver</a></span>
+    <span><a href="/2022/07/05/28/" title="BUU[QCTF2018]Xman-babymips">BUU[QCTF2018]Xman-babymips</a></span>
   </li>
 
       
@@ -611,31 +656,7 @@ sub_40152B ()...
 <a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
 </div>
 
-    <span><a href="/2022/04/08/7/" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/05/16/20/" title="ACTF新生赛2020 easyre">ACTF新生赛2020 easyre</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="分类于 加密算法">加密算法</a>
-</div>
-
-    <span><a href="/2022/04/05/5/" title="RC4">RC4</a></span>
+    <span><a href="/2022/04/10/8/" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a></span>
   </li>
 
       
@@ -659,7 +680,19 @@ sub_40152B ()...
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/27/17/" title="BUU[WUSTCTF2020]level4">BUU[WUSTCTF2020]level4</a></span>
+    <span><a href="/2022/06/29/22/" title="BUU[2019红帽杯]xx">BUU[2019红帽杯]xx</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
+</div>
+
+    <span><a href="/2022/04/15/9/" title="2020华南师大CTF新生赛maze">2020华南师大CTF新生赛maze</a></span>
   </li>
 
       
@@ -671,7 +704,19 @@ sub_40152B ()...
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/25/15/" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></span>
+    <span><a href="/2022/05/16/20/" title="ACTF新生赛2020 easyre">ACTF新生赛2020 easyre</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/04/2/" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></span>
   </li>
 
   </ul>
