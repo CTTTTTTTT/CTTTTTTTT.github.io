@@ -27,12 +27,12 @@
   <meta name="keywords" content="CTF" />
 
 
-<link rel="canonical" href="https://ctttttttt.github.io/2022/04/15/9/">
+<link rel="canonical" href="https://ctttttttt.github.io/2022/07/04/26/">
 
 
 
   <title>
-2020华南师大CTF新生赛maze - 游戏题 - CTF |
+BUU[FlareOn4]login - Re - CTF |
 (o゜▽゜)o☆[BINGO!] = 逆向上分之路 = Tuyt的Blog</title>
 <meta name="generator" content="Hexo 5.4.1"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,16 +60,16 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">2020华南师大CTF新生赛maze
+  <h1 itemprop="name headline">BUU[FlareOn4]login
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2022-04-15 19:28:46">
+  <span class="item" title="创建时间：2022-07-04 10:03:53">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2022-04-15T19:28:46+08:00">2022-04-15</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-07-04T10:03:53+08:00">2022-07-04</time>
   </span>
 </div>
 
@@ -102,12 +102,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://images6.alphacoders.com/114/thumbbig-1144163.webp"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexbei4hj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://images5.alphacoders.com/111/thumbbig-1115214.webp"></li>
         </ul>
       </div>
     </header>
@@ -136,12 +136,12 @@
 <span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/" itemprop="item" rel="index" title="分类于 CTF"><span itemprop="name">CTF</span></a>
 <meta itemprop="position" content="1" /></span>
 <i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" itemprop="item" rel="index" title="分类于 游戏题"><span itemprop="name">游戏题</span></a>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CTF/Re/" itemprop="item" rel="index" title="分类于 Re"><span itemprop="name">Re</span></a>
 <meta itemprop="position" content="2" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://ctttttttt.github.io/2022/04/15/9/">
+  <link itemprop="mainEntityOfPage" href="https://ctttttttt.github.io/2022/07/04/26/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/head.jpg">
@@ -156,33 +156,14 @@
   <div class="body md" itemprop="articleBody">
     
 
-    <h4 id="2020华南师大CTF新生赛maze"><a href="#2020华南师大CTF新生赛maze" class="headerlink" title="2020华南师大CTF新生赛maze"></a>2020华南师大CTF新生赛maze</h4><h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><p>首先查壳<img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415193004979.png" alt="image-20220415193004979"></p>
-<p>发现这是没有壳32位的，然后把它方如ida去分析</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415193101638.png" alt="image-20220415193101638"></p>
-<p>很容易知道这个是找最短路径的迷宫，于是我们去CreateMap()这个函数去看看这个迷宫是怎样的</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415193340808.png" alt="image-20220415193340808"></p>
-<p>我一开始不知道v2&amp;1然后再v2&gt;&gt;=1是干嘛的，然后去问了一下一个CAS的朋友，才知道这个v2&amp;1是奇数就是它本身，如果不是奇数就是0。这个v2&gt;&gt;=1是除2，向下取整数的意思，判断这个位置是不是1。这里大致就是将num的元素都转换位2进制的意思</p>
-<p>那么下一步就是找到所有的v2然后将其转换成16*16的表，这里就直接IDA动态调试，在这里for循环这里下一个断点，然后去看值</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415194153985.png" alt="image-20220415194153985"></p>
-<p>这是第一个的v2，每到一次这里</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415194245658.png" alt="image-20220415194245658"></p>
-<p>就是一个新的v2的值（停在v1=1的时候，才会出现新v2）后将其转化成表格</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">0xffff</span>,<span class="number">0x83F7</span>,<span class="number">0xBBF7</span>,<span class="number">0xBB17</span>,<span class="number">0xBB57</span>,<span class="number">0xB857</span>,<span class="number">0xBF57</span>,<span class="number">0xBF17</span>,<span class="number">0xBFB7</span>,<span class="number">0xBFB7</span>,<span class="number">0x8611</span>,<span class="number">0xF7B5</span>,<span class="number">0xF7B5</span>,<span class="number">0x7B4</span>,<span class="number">0xFF87</span>,<span class="number">0xFFFF</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    a = <span class="built_in">bin</span>(i)</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+    <h2 id="BUU-FlareOn4-login"><a href="#BUU-FlareOn4-login" class="headerlink" title="BUU[FlareOn4]login"></a>BUU[FlareOn4]login</h2><p>分析</p>
+<p>下载题后，是一个.html的后缀，直接用记事本打开</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220704100646382.png" alt="image-20220704100646382"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE Html /&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;FLARE On 2017&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; name=&quot;flag&quot; id=&quot;flag&quot; value=&quot;Enter the flag&quot; /&gt;</span><br><span class="line">        &lt;input type=&quot;button&quot; id=&quot;prompt&quot; value=&quot;Click to check the flag&quot; /&gt;</span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            document.getElementById(&quot;prompt&quot;).onclick = function () &#123;</span><br><span class="line">                var flag = document.getElementById(&quot;flag&quot;).value;</span><br><span class="line">                var rotFlag = flag.replace(/[a-zA-Z]/g, function(c)&#123;return String.fromCharCode((c &lt;= &quot;Z&quot; ? 90 : 122) &gt;= (c = c.charCodeAt(0) + 13) ? c : c - 26);&#125;);//发现是右移13位的操作，想到了凯撒密码</span><br><span class="line">                if (&quot;PyvragFvqrYbtvafNerRnfl@syner-ba.pbz&quot; == rotFlag) &#123;</span><br><span class="line">                    alert(&quot;Correct flag!&quot;);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    alert(&quot;Incorrect flag, rot again&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
-<p>原本迷宫倒数第三行的0x7B4为<img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415201720434.png" alt="image-20220415201720434"></p>
-<p>然后根据二进制，填充一下得到下图</p>
-<p>那么得到迷宫</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415200833555.png" alt="image-20220415200833555"></p>
-<p>然后去check函数找找有没有操作的规则</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415201831928.png" alt="image-20220415201831928"></p>
-<p>由v6和v7的初始值，以及增减容易得出</p>
-<p>有四个方向k，h，j，l</p>
-<p>v6控制行，v7控制列<br>l为右移一个<br>h左移一个<br>k上移一个<br>j下移一个</p>
-<h5 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h5><p>最后去走迷宫</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220415202049313.png" alt="image-20220415202049313"></p>
-<p>然后得到</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;llllkkkhhhkkkkkkkkklllljjjjllljjljjjjjjjlllkkkklljjjl&#125;</span><br></pre></td></tr></table></figure>
-
+<p>接着去在线解密凯撒密码</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/CTTTTTTTT/image@main/image-20220704101052517.png" alt="image-20220704101052517"></p>
+<p>flag{<span class="exturl" data-url="bWFpbHRvOiYjeDQzOyYjeDZjOyYjMTA1OyYjMTAxOyYjMTEwOyYjMTE2OyYjeDUzOyYjeDY5OyYjeDY0OyYjMTAxOyYjeDRjOyYjeDZmOyYjMTAzOyYjeDY5OyYjMTEwOyYjeDczOyYjeDQxOyYjeDcyOyYjeDY1OyYjNjk7JiN4NjE7JiN4NzM7JiN4Nzk7JiM2NDsmIzEwMjsmIzEwODsmI3g2MTsmI3g3MjsmIzEwMTsmIzQ1OyYjeDZmOyYjeDZlOyYjNDY7JiN4NjM7JiN4NmY7JiMxMDk7">&#x43;&#x6c;&#105;&#101;&#110;&#116;&#x53;&#x69;&#x64;&#101;&#x4c;&#x6f;&#103;&#x69;&#110;&#x73;&#x41;&#x72;&#x65;&#69;&#x61;&#x73;&#x79;&#64;&#102;&#108;&#x61;&#x72;&#101;&#45;&#x6f;&#x6e;&#46;&#x63;&#x6f;&#109;</span>}</p>
 
       <div class="tags">
           <a href="/tags/CTF/" rel="tag"><i class="ic i-tag"></i> CTF</a>
@@ -197,7 +178,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-04-15 20:23:48" itemprop="dateModified" datetime="2022-04-15T20:23:48+08:00">2022-04-15</time>
+    <time title="修改时间：2022-07-05 08:48:38" itemprop="dateModified" datetime="2022-07-05T08:48:38+08:00">2022-07-05</time>
   </span>
 </div>
 
@@ -210,7 +191,7 @@
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://ctttttttt.github.io/2022/04/15/9/" title="2020华南师大CTF新生赛maze">https://ctttttttt.github.io/2022/04/15/9/</a>
+    <a href="https://ctttttttt.github.io/2022/07/04/26/" title="BUU[FlareOn4]login">https://ctttttttt.github.io/2022/07/04/26/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -229,20 +210,20 @@
     <div class="item left">
       
 
-  <a href="/2022/04/10/8/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipevuctzzj20zk0m84qp.jpg" title="BUU[HDCTF2019]Maze">
+  <a href="/2022/07/03/25/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeuv80yoj20zk0m8kjl.jpg" title="BUU[羊城杯 2020]login">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> 游戏题</span>
-  <h3>BUU[HDCTF2019]Maze</h3>
+  <span class="category"><i class="ic i-flag"></i> Re</span>
+  <h3>BUU[羊城杯 2020]login</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2022/04/17/10/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclwuom7cj20zk0m8dvn.jpg" title="恒月杯18年9月NewDriver">
+  <a href="/2022/07/04/27/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclj9410cj20zk0m8h12.jpg" title="BUU[ACTF新生赛2020]rome">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Re</span>
-  <h3>恒月杯18年9月NewDriver</h3>
+  <h3>BUU[ACTF新生赛2020]rome</h3>
   </a>
 
     </div>
@@ -261,11 +242,11 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#2020%E5%8D%8E%E5%8D%97%E5%B8%88%E5%A4%A7CTF%E6%96%B0%E7%94%9F%E8%B5%9Bmaze"><span class="toc-number">1.</span> <span class="toc-text">2020华南师大CTF新生赛maze</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">解决方法</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#BUU-FlareOn4-login"><span class="toc-number">1.</span> <span class="toc-text">BUU[FlareOn4]login</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2022/04/08/7/" rel="bookmark" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a></li><li><a href="/2022/04/10/8/" rel="bookmark" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a></li><li class="active"><a href="/2022/04/15/9/" rel="bookmark" title="2020华南师大CTF新生赛maze">2020华南师大CTF新生赛maze</a></li><li><a href="/2022/04/25/14/" rel="bookmark" title="BUU[ACTF新生赛2020]Oruga">BUU[ACTF新生赛2020]Oruga</a></li>
+          <li><a href="/2022/03/28/123-1/" rel="bookmark" title="easyre题解">easyre题解</a></li><li><a href="/2022/03/28/1/" rel="bookmark" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></li><li><a href="/2022/04/04/2/" rel="bookmark" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></li><li><a href="/2022/04/05/4/" rel="bookmark" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></li><li><a href="/2022/04/06/6/" rel="bookmark" title="BUUCTF xxor">BUUCTF xxor</a></li><li><a href="/2022/04/17/10/" rel="bookmark" title="恒月杯18年9月NewDriver">恒月杯18年9月NewDriver</a></li><li><a href="/2022/04/19/11/" rel="bookmark" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">关于base64换表及交叉引用BUU[WUSTCTF2020]level3</a></li><li><a href="/2022/04/23/12/" rel="bookmark" title="BUU[FlareOn4]IgniteMe">BUU[FlareOn4]IgniteMe</a></li><li><a href="/2022/04/24/13/" rel="bookmark" title="BUU[FlareOn6]Overlong">BUU[FlareOn6]Overlong</a></li><li><a href="/2022/04/25/15/" rel="bookmark" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></li><li><a href="/2022/04/26/16/" rel="bookmark" title="美团CTF2021 高校安全挑战赛 Random">美团CTF2021 高校安全挑战赛 Random</a></li><li><a href="/2022/04/27/17/" rel="bookmark" title="BUU[WUSTCTF2020]level4">BUU[WUSTCTF2020]level4</a></li><li><a href="/2022/05/07/18/" rel="bookmark" title="网鼎杯2020青龙组 singal">网鼎杯2020青龙组 singal</a></li><li><a href="/2022/05/08/19/" rel="bookmark" title="BUU--findKey">BUU--findKey</a></li><li><a href="/2022/05/16/20/" rel="bookmark" title="ACTF新生赛2020 easyre">ACTF新生赛2020 easyre</a></li><li><a href="/2022/06/27/21/" rel="bookmark" title="BUU[羊城杯 2020]easyre">BUU[羊城杯 2020]easyre</a></li><li><a href="/2022/06/29/22/" rel="bookmark" title="BUU[2019红帽杯]xx">BUU[2019红帽杯]xx</a></li><li><a href="/2022/06/30/23/" rel="bookmark" title="BUU[CFI-CTF 2018]IntroToPE">BUU[CFI-CTF 2018]IntroToPE</a></li><li><a href="/2022/07/02/24/" rel="bookmark" title="BUU[安洵杯 2019]crackMe">BUU[安洵杯 2019]crackMe</a></li><li><a href="/2022/07/03/25/" rel="bookmark" title="BUU[羊城杯 2020]login">BUU[羊城杯 2020]login</a></li><li class="active"><a href="/2022/07/04/26/" rel="bookmark" title="BUU[FlareOn4]login">BUU[FlareOn4]login</a></li><li><a href="/2022/07/04/27/" rel="bookmark" title="BUU[ACTF新生赛2020]rome">BUU[ACTF新生赛2020]rome</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -353,12 +334,12 @@
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2022/04/10/8/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/2022/07/03/25/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2022/04/17/10/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+        <a href="/2022/07/04/27/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -385,30 +366,6 @@
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/06/29/22/" title="BUU[2019红帽杯]xx">BUU[2019红帽杯]xx</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="分类于 加密算法">加密算法</a>
-</div>
-
-    <span><a href="/2022/04/05/3/" title="TEA">TEA</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
     <span><a href="/2022/04/19/11/" title="关于base64换表及交叉引用BUU[WUSTCTF2020]level3">关于base64换表及交叉引用BUU[WUSTCTF2020]level3</a></span>
   </li>
 
@@ -421,7 +378,7 @@
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/03/28/123-1/" title="easyre题解">easyre题解</a></span>
+    <span><a href="/2022/04/04/2/" title="BUU--BabyAlgorithm">BUU--BabyAlgorithm</a></span>
   </li>
 
       
@@ -433,7 +390,7 @@
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/07/02/24/" title="BUU[安洵杯 2019]crackMe">BUU[安洵杯 2019]crackMe</a></span>
+    <span><a href="/2022/07/04/27/" title="BUU[ACTF新生赛2020]rome">BUU[ACTF新生赛2020]rome</a></span>
   </li>
 
       
@@ -445,7 +402,7 @@
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/25/15/" title="BUU[Zer0pts2020]easy strcmp">BUU[Zer0pts2020]easy strcmp</a></span>
+    <span><a href="/2022/04/27/17/" title="BUU[WUSTCTF2020]level4">BUU[WUSTCTF2020]level4</a></span>
   </li>
 
       
@@ -457,19 +414,7 @@
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/05/4/" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/07/03/25/" title="BUU[羊城杯 2020]login">BUU[羊城杯 2020]login</a></span>
+    <span><a href="/2022/04/06/6/" title="BUUCTF xxor">BUUCTF xxor</a></span>
   </li>
 
       
@@ -490,10 +435,46 @@
 <div class="breadcrumb">
 <a href="/categories/CTF/" title="分类于 CTF">CTF</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/06/30/23/" title="BUU[CFI-CTF 2018]IntroToPE">BUU[CFI-CTF 2018]IntroToPE</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/05/07/18/" title="网鼎杯2020青龙组 singal">网鼎杯2020青龙组 singal</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/04/23/12/" title="BUU[FlareOn4]IgniteMe">BUU[FlareOn4]IgniteMe</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
 </div>
 
-    <span><a href="/2022/04/25/14/" title="BUU[ACTF新生赛2020]Oruga">BUU[ACTF新生赛2020]Oruga</a></span>
+    <span><a href="/2022/04/15/9/" title="2020华南师大CTF新生赛maze">2020华南师大CTF新生赛maze</a></span>
   </li>
 
   </ul>
@@ -524,7 +505,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2022/04/15/9/',
+    path: '2022/07/04/26/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
