@@ -89,12 +89,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
-          <li class="item" data-background-image="https://images6.alphacoders.com/114/thumbbig-1144163.webp"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicit31ffoj20zk0m8naf.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
         </ul>
       </div>
     </header>
@@ -121,7 +121,85 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/07/14/34/" itemprop="url" title="BUU [CISCN2018]2ex"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gipev1x5e4j20zk0m8b29.jpg"></a>
+    <a href="/2022/07/20/36/" itemprop="url" title="NepCTF we_can_go"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclil3m4ej20zk0m8tn8.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2022-07-20 23:01:51">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2022-07-20T23:01:51+08:00">2022-07-20</time>
+  </span>
+</div>
+
+    <h3><a href="/2022/07/20/36/" itemprop="url" title="NepCTF we_can_go">NepCTF we_can_go</a></h3>
+    <div class="excerpt">
+        # NepCTF we_can_go
+# 分析
+首先查壳，32 位无壳
+
+然后直接去运行一下看看，随便输入点什么
+
+这里弹出了 false，然后去 IDA 字符串中去找到 false
+
+然后交叉引用它，去找到突破口
+
+然后进去看
+
+这里的 23 告诉我们 flag 总共是 23 个字符，出去 NepCTF {} 就还剩 15 个，然后这里的 + 7 应该表示的是 &amp;quot;NepCTF {&amp;quot;，所以我就觉得 flag 应该会在 dword_10DB6E0 函数中，于是进去看一下
+
+我在这第 12 行 result = v1;...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/CTF/Re/" itemprop="url" title="Re"><i class="ic i-flag"></i>Re</a>
+      </span>
+    </div>
+    <a href="/2022/07/20/36/" itemprop="url" title="NepCTF we_can_go" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2022/07/19/35/" itemprop="url" title="NEPCTF 快来签到"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclhtuo6nj20zk0m8ttm.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2022-07-19 16:42:04">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2022-07-19T16:42:04+08:00">2022-07-19</time>
+  </span>
+</div>
+
+    <h3><a href="/2022/07/19/35/" itemprop="url" title="NEPCTF 快来签到">NEPCTF 快来签到</a></h3>
+    <div class="excerpt">
+        # NEPCTF 快来签到
+# 分析
+首先查壳，无壳 32 位，然后放入 IDA 分析，这里我直接 F5 去看然后就出现了这种情况
+
+接着我就去网上搜怎么改大小
+
+接着改完大小后 F5 然后缩小就出 flag 了
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/CTF/Re/" itemprop="url" title="Re"><i class="ic i-flag"></i>Re</a>
+      </span>
+    </div>
+    <a href="/2022/07/19/35/" itemprop="url" title="NEPCTF 快来签到" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2022/07/14/34/" itemprop="url" title="BUU [CISCN2018]2ex"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gipeu1usa7j20zk0m8b29.jpg"></a>
   </div>
   <div class="info">
     
@@ -160,7 +238,7 @@ base64特征
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/07/08/33/" itemprop="url" title="BUU [NPUCTF2020]你好sao啊"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclwrdwyaj20zk0m8are.jpg"></a>
+    <a href="/2022/07/08/33/" itemprop="url" title="BUU [NPUCTF2020]你好sao啊"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></a>
   </div>
   <div class="info">
     
@@ -202,7 +280,7 @@ flag{w0w+y0U+cAn+r3lllY+dAnc3}
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/07/08/32/" itemprop="url" title="BUU [GKCTF 2021]QQQQT"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gipevo9j1jj20zk0m8e81.jpg"></a>
+    <a href="/2022/07/08/32/" itemprop="url" title="BUU [GKCTF 2021]QQQQT"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></a>
   </div>
   <div class="info">
     
@@ -242,7 +320,7 @@ flag{12t4tww3r5e77}
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/07/07/31/" itemprop="url" title="BUU [WUSTCTF2020]funnyre"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gipevuctzzj20zk0m84qp.jpg"></a>
+    <a href="/2022/07/07/31/" itemprop="url" title="BUU [WUSTCTF2020]funnyre"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclfw2t96j20zk0m8x6p.jpg"></a>
   </div>
   <div class="info">
     
@@ -280,7 +358,7 @@ flag{12t4tww3r5e77}
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/07/06/30/" itemprop="url" title="BUU CrackRTF"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giciuv0socj20zk0m8qes.jpg"></a>
+    <a href="/2022/07/06/30/" itemprop="url" title="BUU CrackRTF"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giciub8ja1j20zk0m81ky.jpg"></a>
   </div>
   <div class="info">
     
@@ -316,7 +394,7 @@ sub_40100A函数
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/07/05/29/" itemprop="url" title="BUU[FlareOn5]Ultimate Minesweeper"><img data-src="https://tva4.sinaimg.cn/large/0073WLvOgy1gp28jxpee1j30qo0f07bw.jpg"></a>
+    <a href="/2022/07/05/29/" itemprop="url" title="BUU[FlareOn5]Ultimate Minesweeper"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclwrdwyaj20zk0m8are.jpg"></a>
   </div>
   <div class="info">
     
@@ -345,7 +423,7 @@ sub_40100A函数
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/07/05/28/" itemprop="url" title="BUU[QCTF2018]Xman-babymips"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></a>
+    <a href="/2022/07/05/28/" itemprop="url" title="BUU[QCTF2018]Xman-babymips"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></a>
   </div>
   <div class="info">
     
@@ -381,7 +459,7 @@ sub_40100A函数
         
 <article class="item">
   <div class="cover">
-    <a href="/2022/07/04/27/" itemprop="url" title="BUU[ACTF新生赛2020]rome"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></a>
+    <a href="/2022/07/04/27/" itemprop="url" title="BUU[ACTF新生赛2020]rome"><img data-src="https://tva3.sinaimg.cn/mw690/6833939bly1giclh3brzpj20zk0m8ann.jpg"></a>
   </div>
   <div class="info">
     
@@ -409,70 +487,6 @@ sub_40100A函数
       </span>
     </div>
     <a href="/2022/07/04/27/" itemprop="url" title="BUU[ACTF新生赛2020]rome" class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/2022/07/04/26/" itemprop="url" title="BUU[FlareOn4]login"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gicitzannuj20zk0m8b29.jpg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="创建时间：2022-07-04 10:03:53">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-07-04T10:03:53+08:00">2022-07-04</time>
-  </span>
-</div>
-
-    <h3><a href="/2022/07/04/26/" itemprop="url" title="BUU[FlareOn4]login">BUU[FlareOn4]login</a></h3>
-    <div class="excerpt">
-        BUU[FlareOn4]login分析
-下载题后，是一个.html的后缀，直接用记事本打开
-
-123456789101112131415161718192021&amp;lt;!DOCTYPE Html /&amp;gt;&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;FLARE On 2017&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input type=&amp;quot;text&amp;quot;...
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/CTF/Re/" itemprop="url" title="Re"><i class="ic i-flag"></i>Re</a>
-      </span>
-    </div>
-    <a href="/2022/07/04/26/" itemprop="url" title="BUU[FlareOn4]login" class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/2022/07/03/25/" itemprop="url" title="BUU[羊城杯 2020]login"><img data-src="https://tva1.sinaimg.cn/mw690/6833939bly1gipeybxm1pj20zk0m8niv.jpg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="创建时间：2022-07-03 14:34:54">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2022-07-03T14:34:54+08:00">2022-07-03</time>
-  </span>
-</div>
-
-    <h3><a href="/2022/07/03/25/" itemprop="url" title="BUU[羊城杯 2020]login">BUU[羊城杯 2020]login</a></h3>
-    <div class="excerpt">
-        BUU[羊城杯 2020]login分析首先下载文件下来发现是一个py编译的exe，需要解包，然后反编译成py文件才能做
-于是用cmd弄了一下
-
-PS:把pyinstxtractor.py和6.exe（py文件名）文件放在同个目录下然后打开cmd，进入该目录，输入：python3（这个是你的python地址） pyinstxtractor.py 6.exe...
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/CTF/Re/" itemprop="url" title="Re"><i class="ic i-flag"></i>Re</a>
-      </span>
-    </div>
-    <a href="/2022/07/03/25/" itemprop="url" title="BUU[羊城杯 2020]login" class="btn">more...</a>
   </div>
 </article>
 
@@ -511,7 +525,7 @@ PS:把pyinstxtractor.py和6.exe（py文件名）文件放在同个目录下然�
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">35</span>
+        <span class="count">37</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -612,34 +626,10 @@ PS:把pyinstxtractor.py和6.exe（py文件名）文件放在同个目录下然�
 <div class="breadcrumb">
 <a href="/categories/CTF/" title="分类于 CTF">CTF</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
-</div>
-
-    <span><a href="/2022/04/27/17/" title="BUU[WUSTCTF2020]level4">BUU[WUSTCTF2020]level4</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="分类于 加密算法">加密算法</a>
-</div>
-
-    <span><a href="/2022/04/05/3/" title="TEA">TEA</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
 <a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
 </div>
 
-    <span><a href="/2022/04/25/14/" title="BUU[ACTF新生赛2020]Oruga">BUU[ACTF新生赛2020]Oruga</a></span>
+    <span><a href="/2022/04/10/8/" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a></span>
   </li>
 
       
@@ -651,7 +641,7 @@ PS:把pyinstxtractor.py和6.exe（py文件名）文件放在同个目录下然�
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/03/28/123-1/" title="easyre题解">easyre题解</a></span>
+    <span><a href="/2022/04/23/12/" title="BUU[FlareOn4]IgniteMe">BUU[FlareOn4]IgniteMe</a></span>
   </li>
 
       
@@ -663,7 +653,7 @@ PS:把pyinstxtractor.py和6.exe（py文件名）文件放在同个目录下然�
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/05/4/" title="题解HGAME2022 creakme">题解HGAME2022 creakme</a></span>
+    <span><a href="/2022/06/30/23/" title="BUU[CFI-CTF 2018]IntroToPE">BUU[CFI-CTF 2018]IntroToPE</a></span>
   </li>
 
       
@@ -675,7 +665,31 @@ PS:把pyinstxtractor.py和6.exe（py文件名）文件放在同个目录下然�
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/03/28/1/" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></span>
+    <span><a href="/2022/05/07/18/" title="网鼎杯2020青龙组 singal">网鼎杯2020青龙组 singal</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/07/19/35/" title="NEPCTF 快来签到">NEPCTF 快来签到</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/07/08/32/" title="BUU [GKCTF 2021]QQQQT">BUU [GKCTF 2021]QQQQT</a></span>
   </li>
 
       
@@ -699,19 +713,7 @@ PS:把pyinstxtractor.py和6.exe（py文件名）文件放在同个目录下然�
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/04/26/16/" title="美团CTF2021 高校安全挑战赛 Random">美团CTF2021 高校安全挑战赛 Random</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/" title="分类于 游戏题">游戏题</a>
-</div>
-
-    <span><a href="/2022/04/10/8/" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a></span>
+    <span><a href="/2022/07/07/31/" title="BUU [WUSTCTF2020]funnyre">BUU [WUSTCTF2020]funnyre</a></span>
   </li>
 
       
@@ -723,7 +725,19 @@ PS:把pyinstxtractor.py和6.exe（py文件名）文件放在同个目录下然�
 <a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
 </div>
 
-    <span><a href="/2022/06/29/22/" title="BUU[2019红帽杯]xx">BUU[2019红帽杯]xx</a></span>
+    <span><a href="/2022/04/26/16/" title="美团CTF2021 高校安全挑战赛 Random">美团CTF2021 高校安全挑战赛 Random</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CTF/" title="分类于 CTF">CTF</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/CTF/Re/" title="分类于 Re">Re</a>
+</div>
+
+    <span><a href="/2022/03/28/1/" title="2022DASCTF X SU 三月春季挑战赛   easyre题解">2022DASCTF X SU 三月春季挑战赛   easyre题解</a></span>
   </li>
 
   </ul>
