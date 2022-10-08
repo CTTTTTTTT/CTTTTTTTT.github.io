@@ -1,0 +1,369 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>逆向上分之路 - Tuyt的Blog</title><meta name="author" content="Tuyt"><meta name="copyright" content="Tuyt"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="CTF🐕都不打！！！">
+<meta property="og:type" content="website">
+<meta property="og:title" content="逆向上分之路">
+<meta property="og:url" content="https://ctttttttt.github.io/page/4/index.html">
+<meta property="og:site_name" content="逆向上分之路">
+<meta property="og:description" content="CTF🐕都不打！！！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.moran233.xyz/https://raw.githubusercontent.com/xianglibie/image/main/202209211852905.png">
+<meta property="article:author" content="Tuyt">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.moran233.xyz/https://raw.githubusercontent.com/xianglibie/image/main/202209211852905.png"><link rel="shortcut icon" href="https://cdn.moran233.xyz/https://raw.githubusercontent.com/xianglibie/image/main/202209302255235.png"><link rel="canonical" href="https://ctttttttt.github.io/page/4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '逆向上分之路',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-10-08 21:48:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/mainColor/heoMainColor.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/poem/poem.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/xianglibie/image/main/202209211852905.png" onerror="onerror=null;src='/img/404.jpg'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">47</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 目录</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">逆向上分之路</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 目录</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">逆向上分之路</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item"><a class="categoryBar-list-link" href="/categories/CTF/">CTF</a><span class="categoryBar-list-count">47</span></li></ul></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/10/08/37/" title="BUU[SCTF2019]babyre">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BUU[SCTF2019]babyre"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/08/37/" title="BUU[SCTF2019]babyre">BUU[SCTF2019]babyre</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-08T13:48:25.313Z" title="发表于 2022-10-08 21:48:25">2022-10-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CTF/">CTF</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/CTF/Re/">Re</a></span></div><div class="content">[SCTF2019]babyre分析首先查壳，64位无壳
+
+放入对应的IDA中看，直接进入字符串去看
+
+看到关键句子直接索引
+
+这里发现jb和jnb都是跳转重复后面的loop语句也是个错的，直接将他们全部nop掉（后面还有几个类似的都是一样的操作）
+
+到后面的时候发现了奇怪的东西
+
+因为没见过这个in就觉得很奇怪而且后面还跟着一大段为编译成功的内容
+
+然后就去看一下in的字节码
+
+
+
+一下是in指令接着又是mov指令，这里就知道这是花指令，直接将E4改为90（nop）然后选中这一段主函数按P申明一下，接着反编译
+
+这里发现有个地方不对是C22这个函数引用出了错，接着去看看
+
+发现这一段没有申明函数，要给他变成函数，重新进去这个程序，按之前步骤来，在按P之前先将其申明
+
+按Y键进行修改类型，将它变成独立的函数，然后再最后的那个test按D将其变为数据，那么C22就会变成一个独立函数，接着选中前面一部分按P申明一下main，再反编译
+第一段
+
+可以看出来这里是一个迷宫，但是不止上下左右四个键它还有25步的加键，然后我们还知道它的迷宫图，按照上下左右的排布我们可以知道它是5个5*5的迷宫
+
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2022/10/08/36/" title="NepCTF we_can_go">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NepCTF we_can_go"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/08/36/" title="NepCTF we_can_go">NepCTF we_can_go</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-08T13:48:25.310Z" title="发表于 2022-10-08 21:48:25">2022-10-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CTF/">CTF</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/CTF/Re/">Re</a></span></div><div class="content">NepCTF we_can_go分析首先查壳，32位无壳
+
+然后直接去运行一下看看，随便输入点什么
+
+这里弹出了false，然后去IDA字符串中去找到false
+
+然后交叉引用它，去找到突破口
+
+
+然后进去看
+
+这里的23告诉我们flag总共是23个字符，出去NepCTF{}就还剩15个，然后这里的+7应该表示的是”NepCTF{“，所以我就觉得flag应该会在dword_10DB6E0函数中，于是进去看一下
+
+我在这第12行result = v1;这里下了断点，去动调一下，看看会不会有什么东西
+
+看见这里有东西传进去这些寄存器中，然后按F8走一下，去看一下寄存器里的是什么东西
+
+然后就出flag了
+NepCTF{U9eT_t0_th3TRUE}
+总结这题其实就是考你会不会动态调试，以及去别开不必要的调试找到有用的，以及观察能力
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/10/08/35/" title="NEPCTF 快来签到">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NEPCTF 快来签到"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/08/35/" title="NEPCTF 快来签到">NEPCTF 快来签到</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-08T13:48:25.307Z" title="发表于 2022-10-08 21:48:25">2022-10-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CTF/">CTF</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/CTF/Re/">Re</a></span></div><div class="content">NEPCTF 快来签到分析首先查壳，无壳32位，然后放入IDA分析，这里我直接F5去看然后就出现了这种情况
+
+接着我就去网上搜怎么改大小
+
+
+接着改完大小后F5然后缩小就出flag了
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2022/10/08/34/" title="BUU [CISCN2018]2ex">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BUU [CISCN2018]2ex"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/08/34/" title="BUU [CISCN2018]2ex">BUU [CISCN2018]2ex</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-08T13:48:25.303Z" title="发表于 2022-10-08 21:48:25">2022-10-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CTF/">CTF</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/CTF/Re/">Re</a></span></div><div class="content">BUU [CISCN2018]2ex分析
+首先查壳，无壳32位，放入IDA
+
+一个一个点，看看有没有什么有用的，发现第三个是base64的加密
+
+base64特征
+去找一下字符串
+
+
+这里没有看到密文，然后想到给到的第二个txt的文本，里面刚好有密文，然后解密
+
+得到flag{change53233}
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2022/10/08/33/" title="BUU [NPUCTF2020]你好sao啊">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BUU [NPUCTF2020]你好sao啊"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/08/33/" title="BUU [NPUCTF2020]你好sao啊">BUU [NPUCTF2020]你好sao啊</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-08T13:48:25.301Z" title="发表于 2022-10-08 21:48:25">2022-10-08</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CTF/">CTF</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/CTF/Re/">Re</a></span></div><div class="content">BUU [NPUCTF2020]你好sao啊分析首先查壳，64位无壳，放入IDA中
+
+到RxEncode函数中去看看
+
+
+那么这题就是去给字符串加密
+
+进去看一下，应该是字符串
+
+然后到外面的主函数去，根据strcmp(s1, s2)，可以确定明文就是
+
+这里要注意大小端，直接用工具解
+
+这里的hex编码就是16进制编码，是字符的ASCII值的16进制表示
+flag{w0w+y0U+cAn+r3lllY+dAnc3}
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/3/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/#content-inner">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/#content-inner">10</a><a class="extend next" rel="next" href="/page/5/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/xianglibie/image/main/202209211852905.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="avatar"/></div><div class="author-info__name">Tuyt</div><div class="author-info__description">CTF🐕都不打！！！</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">47</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>嘿嗨！</span></a></div><!--一言 --><div class="card-widget card-hitokoto"><div class="card-content"><div class="item-headline"><span>『一言』</span><div id="hitokoto">:获取中...</div><i id="hitofrom">:获取中...</i><script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script><script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script><script>fetch('https://v1.hitokoto.cn')
+  .then(function (res){
+  return res.json();
+})
+.then(function (data) {
+  var hitokoto = document.getElementById('hitokoto');
+  hitokoto.innerText = data.hitokoto;
+  var hitofrom = document.getElementById('hitofrom');
+  hitofrom.innerText = "　　　　——" + data.from + '';
+})
+.catch(function (err) {
+  console.error(err);
+})</script></div></div></div><!--每日诗词--><div class="card-widget" id="card-poem"><div id="poem_sentence"></div><div id="poem_info"><div id="poem_dynasty"></div><div id="poem_author"></div></div></div><script src="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/poem/jinrishici.js" charset="utf-8"></script><script type="text/javascript">jinrishici.load(function(result) {
+var sentence = document.querySelector("#poem_sentence")
+var author = document.querySelector("#poem_author")
+var dynasty = document.querySelector("#poem_dynasty")
+
+var sentenceText = result.data.content
+sentenceText = sentenceText.substr(0, sentenceText.length);
+sentence.innerHTML = sentenceText
+dynasty.innerHTML = result.data.origin.dynasty
+author.innerHTML = result.data.origin.author + '《' + result.data.origin.title + '》'
+});</script><!--公告!=partial('includes/widget/card_announcement', {}, {cache: true})--><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/08/9/" title="2020华南师大CTF新生赛maze"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2020华南师大CTF新生赛maze"/></a><div class="content"><a class="title" href="/2022/10/08/9/" title="2020华南师大CTF新生赛maze">2020华南师大CTF新生赛maze</a><time datetime="2022-10-08T13:48:25.378Z" title="发表于 2022-10-08 21:48:25">2022-10-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/08/8/" title="BUU[HDCTF2019]Maze"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BUU[HDCTF2019]Maze"/></a><div class="content"><a class="title" href="/2022/10/08/8/" title="BUU[HDCTF2019]Maze">BUU[HDCTF2019]Maze</a><time datetime="2022-10-08T13:48:25.374Z" title="发表于 2022-10-08 21:48:25">2022-10-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/08/7/" title="2019华南师大CTF新生赛maze"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2019华南师大CTF新生赛maze"/></a><div class="content"><a class="title" href="/2022/10/08/7/" title="2019华南师大CTF新生赛maze">2019华南师大CTF新生赛maze</a><time datetime="2022-10-08T13:48:25.370Z" title="发表于 2022-10-08 21:48:25">2022-10-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/08/6/" title="BUUCTF xxor"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BUUCTF xxor"/></a><div class="content"><a class="title" href="/2022/10/08/6/" title="BUUCTF xxor">BUUCTF xxor</a><time datetime="2022-10-08T13:48:25.366Z" title="发表于 2022-10-08 21:48:25">2022-10-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/08/5/" title="RC4"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RC4"/></a><div class="content"><a class="title" href="/2022/10/08/5/" title="RC4">RC4</a><time datetime="2022-10-08T13:48:25.362Z" title="发表于 2022-10-08 21:48:25">2022-10-08</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/"><span class="card-category-list-name">CTF</span><span class="card-category-list-count">47</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/Re/"><span class="card-category-list-name">Re</span><span class="card-category-list-count">41</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">加密算法</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CTF/%E6%B8%B8%E6%88%8F%E9%A2%98/"><span class="card-category-list-name">游戏题</span><span class="card-category-list-count">4</span></a></li></ul></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CTF/" style="font-size: 1.1em; color: #999">CTF</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">47</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-11-05T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">22.5k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-10-08T13:48:51.965Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 <i id="heartbeat" style="color:#FF6A6A" class="fa fa-heartbeat"></i> Tuyt</div><div class="footer_custom_text">Rabbit's salad box</div></div><div class="container" id="jsi-flying-fish-container"><script src="/js/fish.js"></script></div><style>   @media only screen and (max-width: 767px){
+   #sidebar_search_box input[type=text]{width:calc(100% - 24px)}
+}</style></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "“风是自由的，我希望你也是。”,“欲买桂花同载酒，终不似，少年游。”,“不回消息多正常，哪个捡破烂的不忙”,“我说我在外面做保洁，他们说我年纪轻轻开保时捷。”,“有趣的人生藏于日常，答案在山海。”".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '“风是自由的，我希望你也是。”'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><script src="/js/jq.js"></script><script src="/js/fish.js"></script><script async src="/js/diytitle.js"></script><div class="aplayer no-destroy" data-id="7196034040" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><script id="canvas_nest" defer="defer" color="255,250,250" opacity="0.8" zIndex="-1" count="66" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法制,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body></html>
