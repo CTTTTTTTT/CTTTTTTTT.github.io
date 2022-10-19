@@ -3371,10 +3371,10 @@ span.categoryBar-list-count::after {
   right: -100%;
 }
 li.categoryBar-list-item:nth-child(1) {
-  background: url('https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/C0886E267EB85D4381BE018083EAA31A.jpg');
+  background: url('https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/87AB4187C404CFF220887CFB39EBDA3F.jpg');
 }
 li.categoryBar-list-item:nth-child(2) {
-  background: url('https://cdn.moran233.xyz/https://raw.githubusercontent.com/xianglibie/image/main/202209302251402.jpeg');
+  background: url('https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/C0886E267EB85D4381BE018083EAA31A.jpg');
 }
 li.categoryBar-list-item:nth-child(3) {
   background: url('https://cdn.moran233.xyz/https://raw.githubusercontent.com/xianglibie/image/main/202209302252744.webp');
@@ -3396,7 +3396,7 @@ li.categoryBar-list-item:nth-child(1)>span::after {
   content: '题解' !important;
 }
 li.categoryBar-list-item:nth-child(2)>span::after {
-  content: !important;
+  content: '学到的知识' !important;
 }
 li.categoryBar-list-item:nth-child(3)>span::after {
   content: !important;
