@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>BUU[BSidesSF2019]blink</title>
+      <link href="/2022/10/19/48/"/>
+      <url>/2022/10/19/48/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="BUU-BSidesSF2019-blink"><a href="#BUU-BSidesSF2019-blink" class="headerlink" title="BUU[BSidesSF2019]blink"></a>BUU[BSidesSF2019]blink</h2><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>首先拿到的是apk文件然后去查壳</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20221019201001524.png" alt="image-20221019201001524"></p><p>接着放入jadx-gui中去分析</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20221019201042858.png" alt="image-20221019201042858"></p><p>24行是说用base64解密22行的内容，24 26是将base64解密后的东西转换成图片</p><p>关于setImageBitmap函数：Android中高效的显示图片 - 加载大图(setImageBitmap)</p><p>接着用工具进行解码</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20221019201448927.png" alt="image-20221019201448927"></p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20221019201503921.png" alt="image-20221019201503921"></p><p>得到flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+          <category> Re </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>BUU[SUCTF2018]babyre</title>
       <link href="/2022/10/16/47/"/>
       <url>/2022/10/16/47/</url>
