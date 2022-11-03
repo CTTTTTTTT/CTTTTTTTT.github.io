@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>SMC加密技术</title>
+      <link href="/2022/10/30/50/"/>
+      <url>/2022/10/30/50/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="SMC加密技术"><a href="#SMC加密技术" class="headerlink" title="SMC加密技术"></a>SMC加密技术</h3><p>最近做了个关于SMC加密的题目，这里打算讲讲这个算法</p><h5 id="首先什么是SMC加密它又能干什么呢？"><a href="#首先什么是SMC加密它又能干什么呢？" class="headerlink" title="首先什么是SMC加密它又能干什么呢？"></a>首先什么是SMC加密它又能干什么呢？</h5><p>SMC技术可以在一段代码执行之前对它进行修改，通过这一特性它就能实现将代码以加密的形式保存在可执行文件中，并在运行程序时动态解密。也就是说它是针对静态分析的。如果想要解开加密一般只能动态的跟踪或者用静态去找到加密部分进行解析。</p><h5 id="分辨SMC的几个特点："><a href="#分辨SMC的几个特点：" class="headerlink" title="分辨SMC的几个特点："></a>分辨SMC的几个特点：</h5><p>1.#pragma code_seg(“.XXXX”) 是一条预编译指令，作用是告诉链接器下面的代码放入 .XXXX代码段中，对敏感代码进行保护</p><p>2.遍历找区段名字，然后进行先进行解密操作</p><p>3.最后进行异或和移位加密算法</p><h5 id="SMC加密的加密实现步骤："><a href="#SMC加密的加密实现步骤：" class="headerlink" title="SMC加密的加密实现步骤："></a>SMC加密的加密实现步骤：</h5><p>1.首先对函数代码进行解密</p><p>2.调用这个函数</p><p>3.对代码进行再加密</p><h6 id="PS：那么SMC就很容易去实现多层嵌套加密，也就是说需要解密第一个得到第二个函数再进行解密一直解密到最后一层"><a href="#PS：那么SMC就很容易去实现多层嵌套加密，也就是说需要解密第一个得到第二个函数再进行解密一直解密到最后一层" class="headerlink" title="PS：那么SMC就很容易去实现多层嵌套加密，也就是说需要解密第一个得到第二个函数再进行解密一直解密到最后一层"></a>PS：那么SMC就很容易去实现多层嵌套加密，也就是说需要解密第一个得到第二个函数再进行解密一直解密到最后一层</h6><h5 id="SMC解密方法："><a href="#SMC解密方法：" class="headerlink" title="SMC解密方法："></a>SMC解密方法：</h5><p>1.首先找到被做为敏感代码保护的区段进行自解密</p><p>2.得到新的加密函数，再一次解密直到解完所有层的加密</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习总结 </category>
+          
+          <category> Re </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>BUU[BSidesSF2019]blink</title>
       <link href="/2022/10/30/49/"/>
       <url>/2022/10/30/49/</url>
