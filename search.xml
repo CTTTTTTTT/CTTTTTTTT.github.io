@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>NepnepxCATCTF ——The cat did it</title>
+      <link href="/2023/01/04/55/"/>
+      <url>/2023/01/04/55/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="NepnepxCATCTF-——The-cat-did-it"><a href="#NepnepxCATCTF-——The-cat-did-it" class="headerlink" title="NepnepxCATCTF ——The cat did it"></a>NepnepxCATCTF ——The cat did it</h3><h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><p>加压之后得到一个网站，然后进去，发现是一个求概率的题，给了很多的条件，和要求的东西</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230104162504509.png" alt="image-20230104162504509"></p><p>一开始没有头绪，一直往下面翻，看到这个，点击一下就出现了猫猫的图案</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230104162413522.png" alt="image-20230104162413522"></p><p>发现我无论怎么运动都在猫猫里面，那么我离开猫猫的概率也就是0%，然后结合题目给的提示</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230104162654872.png" alt="image-20230104162654872"></p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230104162756365.png" alt="image-20230104162756365"></p><p>flag：CatCTF{9f1ef07877f9d85a82bd500f408b4814}</p><h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>感觉跟逆向没有半毛钱关系(´・ω・`)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+          <category> Re </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2022年春秋杯 easy_python</title>
       <link href="/2022/12/25/54/"/>
       <url>/2022/12/25/54/</url>
