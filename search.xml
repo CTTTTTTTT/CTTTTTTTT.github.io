@@ -5,6 +5,33 @@
     
     <entry>
       <title>2023 数字网络安全人才挑战赛 game</title>
+      <link href="/2023/03/24/56/56/"/>
+      <url>/2023/03/24/56/56/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="2023-数字网络安全人才挑战赛-game"><a href="#2023-数字网络安全人才挑战赛-game" class="headerlink" title="2023 数字网络安全人才挑战赛 game"></a>2023 数字网络安全人才挑战赛 game</h3><h5 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h5><p>首先查壳</p><p><img src="/.io//image-20230324205429216.png" alt="image-20230324205429216"></p><p>32位无壳，然后放入IDA中分析</p><p><img src="/.io//image-20230324205933325.png" alt="image-20230324205933325"></p><p>可以看到这个exe进行了许多的随机数的处理，本来想着这道题会不会是跟随机数有关，但是看到前面srand用的种子是随机的，也就是说，每次打开程序都会是得到新的不一样的东西。那么本题跟这些与随机数相关的东西无关，这些部分是游戏所需要的参数</p><p><img src="/.io//image-20230324210313812.png" alt="image-20230324210313812"></p><p><img src="/.io//image-20230324210419576.png" alt="image-20230324210419576"></p><p>然后接着往下看，通过动调明白了一些函数到底是在干什么，能知道 “Sleep(0x64u);” 以前的都是游戏的部分。</p><p>看到 “sub_403810(v30, “flag.png”, 0, 0, 0);” 猜测这道题的flag可能是需要动调出图片得到的，那么也就是说首先得需要if语句能够成立才可以运行到下面</p><p>首先想到的是可不可以通过前面的累加进行成立</p><p><img src="/.io//image-20230324211332293.png" alt="image-20230324211332293"></p><p>但是动调发现，这根本到不了这个语句，所以行不通，那么只能改值了。我们知道这种未初始化的部分无法在静态编译中更改值，那么只能边动调边改了</p><p><img src="/.io//image-20230324211518498.png" alt="image-20230324211518498"></p><p>这里将值修改成0x280（640）</p><p><img src="/.io//image-20230324211747178.png" alt="image-20230324211747178"></p><p>然后一直f8来跑，接着会弹出一个Done</p><p><img src="/.io//image-20230324211846536.png" alt="image-20230324211846536"></p><p>然后去文件夹中看看是否生成png图</p><p><img src="/.io//image-20230324211936866.png" alt="image-20230324211936866"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+          <category> Re </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2023 数字网络安全人才挑战赛 game</title>
       <link href="/2023/03/11/56/"/>
       <url>/2023/03/11/56/</url>
       
