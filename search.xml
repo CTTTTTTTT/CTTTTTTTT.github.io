@@ -5,6 +5,33 @@
     
     <entry>
       <title>GDOUCTF Tea</title>
+      <link href="/2023/04/18/61/"/>
+      <url>/2023/04/18/61/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="GDOUCTF-doublegame"><a href="#GDOUCTF-doublegame" class="headerlink" title="GDOUCTF doublegame"></a>GDOUCTF doublegame</h1><h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>打开程序，发现是一个贪吃蛇游戏，直接上CE</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230418142236635.png" alt="image-20230418142236635"></p><p>看来是要达到多少分才行，那么去找得分的基址</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230418142407000.png" alt="image-20230418142407000"></p><p>这个出题人也是牛，直接是静态地址，都不带一点偏移的，一下子就知道了，然后就直接改就行了</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230418142530540.png" alt="image-20230418142530540"></p><p>直接进入第二关，第二关一看就是个迷宫，先去IDA看一下移动的按键和哪个是猫哪个是终点</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230418142733604.png" alt="image-20230418142733604"></p><p>然后开始走迷宫</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230418142857233.png" alt="image-20230418142857233"></p><p>走完迷宫后让我们输入key，去IDA中看一下</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230418143534668.png" alt="image-20230418143534668"></p><p>看来是需要知道第一关到底要达到多少分才能知道key了。这里游戏是过了第一关就直接进入第二关，说明函数可能存在调用关系</p><p>那么直接找一下是谁调用的第二关</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230418143132125.png" alt="image-20230418143132125"></p><p>这里可以看到是这里调用了刚刚的迷宫函数，接着去看看他是哪里的</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230418143232531.png" alt="image-20230418143232531"></p><p>继续查看是谁调用了它</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230418143310651.png" alt="image-20230418143310651"></p><p>这里看到了GAME OVER就知道这里应该是第一个游戏的函数，然后这个&gt;13371337应该就是要达到的分数才会进去那个找猫的函数，所以key就是13371337</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230418143724843.png" alt="image-20230418143724843"></p><p>然后就是最后一个走迷宫了</p><p><img src="https://cdn.moran233.xyz/https://raw.githubusercontent.com/CTTTTTTTT/image/main/image-20230418144009833.png" alt="image-20230418144009833"></p><p>走出迷宫后md5一下再加上刚刚的分数就是flag了</p><p>HZCTF{811173b05afff098b4e0757962127eac13371337}</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+          <category> Re </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GDOUCTF Tea</title>
       <link href="/2023/04/18/60/"/>
       <url>/2023/04/18/60/</url>
       
